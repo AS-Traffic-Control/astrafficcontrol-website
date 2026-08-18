@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="nl">
 
@@ -14,685 +14,773 @@
 
 *{
 
-    box-sizing:border-box;
+  box-sizing:border-box;
 
-    margin:0;
+  margin:0;
 
-    padding:0;
+  padding:0;
+
+}
+
+html{
+
+  scroll-behavior:smooth;
 
 }
 
 body{
 
-    font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 
-    background:#f5f5f5;
+  background:#f5f5f5;
 
-    color:#111;
+  color:#111;
 
 }
 
 a{
 
-    text-decoration:none;
+  text-decoration:none;
 
-}
-
-header{
-
-    background:#090909;
-
-    color:#fff;
-
-    position:sticky;
-
-    top:0;
-
-    z-index:100;
-
-    border-bottom:1px solid #222;
-
-}
-
-.nav{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    height:80px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:0 25px;
-
-}
-
-.logo img{
-
-    width:110px;
-
-    height:62px;
-
-    object-fit:contain;
-
-}
-
-.menu{
-
-    display:flex;
-
-    gap:28px;
-
-    align-items:center;
-
-}
-
-.menu a{
-
-    color:#fff;
-
-    font-size:14px;
-
-}
-
-.menu a:hover{
-
-    color:#ffc400;
-
-}
-
-.offerte{
-
-    background:#ffc400;
-
-    color:#111 !important;
-
-    padding:13px 20px;
-
-    border-radius:6px;
-
-    font-weight:bold;
-
-}
-
-.hero{
-
-    min-height:610px;
-
-    background:
-
-        linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.88) 47%,rgba(0,0,0,.45) 100%),
-
-        radial-gradient(circle at 80% 50%,#454545,#111 55%,#050505);
-
-    color:#fff;
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-.hero-inner{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    width:100%;
-
-    padding:70px 25px;
-
-    display:grid;
-
-    grid-template-columns:1.05fr .95fr;
-
-    align-items:center;
-
-    gap:45px;
-
-}
-
-.hero-small{
-
-    letter-spacing:2px;
-
-    font-size:13px;
-
-    font-weight:bold;
-
-    margin-bottom:18px;
-
-}
-
-.hero h1{
-
-    font-size:58px;
-
-    line-height:1.02;
-
-    max-width:650px;
-
-    margin-bottom:22px;
-
-}
-
-.yellow{
-
-    color:#ffc400;
-
-}
-
-.hero p{
-
-    color:#ddd;
-
-    max-width:620px;
-
-    line-height:1.7;
-
-    font-size:17px;
-
-}
-
-.buttons{
-
-    margin-top:30px;
-
-    display:flex;
-
-    gap:15px;
-
-}
-
-.btn-yellow{
-
-    background:#ffc400;
-
-    color:#111;
-
-    padding:15px 22px;
-
-    border-radius:6px;
-
-    font-weight:bold;
-
-}
-
-.btn-dark{
-
-    color:#fff;
-
-    border:1px solid #777;
-
-    padding:15px 22px;
-
-    border-radius:6px;
-
-}
-
-.hero-logo{
-
-    text-align:center;
-
-}
-
-.hero-logo img{
-
-    width:100%;
-
-    max-width:480px;
-
-    border-radius:20px;
-
-    box-shadow:0 25px 60px rgba(0,0,0,.7);
-
-}
-
-section{
-
-    padding:80px 25px;
+  color:inherit;
 
 }
 
 .container{
 
-    max-width:1200px;
+  max-width:1200px;
 
-    margin:auto;
+  margin:auto;
+
+  padding:0 24px;
+
+}
+
+/* HEADER */
+
+header{
+
+  position:absolute;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  z-index:10;
+
+  padding:18px 0;
+
+  color:white;
+
+}
+
+.nav{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+}
+
+.logo{
+
+  font-size:26px;
+
+  font-weight:900;
+
+  color:#ffc400;
+
+  line-height:1;
+
+}
+
+.logo span{
+
+  color:#fff;
+
+  display:block;
+
+  font-size:12px;
+
+  letter-spacing:4px;
+
+  margin-top:5px;
+
+}
+
+.menu{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:28px;
+
+  font-size:14px;
+
+  font-weight:600;
+
+}
+
+.menu a:hover{
+
+  color:#ffc400;
+
+}
+
+.btn{
+
+  display:inline-block;
+
+  padding:15px 22px;
+
+  border-radius:7px;
+
+  font-weight:700;
+
+  transition:.2s;
+
+}
+
+.btn-yellow{
+
+  background:#ffc400;
+
+  color:#111;
+
+}
+
+.btn-yellow:hover{
+
+  background:#ffd633;
+
+}
+
+.btn-outline{
+
+  border:1px solid #fff;
+
+  color:#fff;
+
+}
+
+/* HERO */
+
+.hero{
+
+  min-height:610px;
+
+  color:white;
+
+  background:
+
+    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.78) 38%,rgba(0,0,0,.12) 72%),
+
+    url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg") center/cover no-repeat;
+
+  display:flex;
+
+  align-items:center;
+
+  padding-top:100px;
+
+}
+
+.hero-content{
+
+  max-width:590px;
+
+}
+
+.eyebrow{
+
+  color:#ffc400;
+
+  font-size:14px;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  margin-bottom:18px;
+
+}
+
+.hero h1{
+
+  font-size:58px;
+
+  line-height:1.05;
+
+  text-transform:uppercase;
+
+  margin-bottom:22px;
+
+}
+
+.hero h1 span{
+
+  color:#ffc400;
+
+}
+
+.hero p{
+
+  color:#e5e5e5;
+
+  font-size:18px;
+
+  line-height:1.7;
+
+  max-width:560px;
+
+}
+
+.hero-buttons{
+
+  display:flex;
+
+  gap:15px;
+
+  margin-top:30px;
+
+}
+
+/* SECTION */
+
+section{
+
+  padding:75px 0;
 
 }
 
 .section-title{
 
-    text-align:center;
+  text-align:center;
 
-    margin-bottom:42px;
+  margin-bottom:38px;
 
 }
 
-.section-title span{
+.section-title small{
 
-    color:#d8a900;
+  color:#e5ad00;
 
-    font-weight:bold;
+  font-weight:800;
 
-    letter-spacing:2px;
-
-    font-size:13px;
+  letter-spacing:1px;
 
 }
 
 .section-title h2{
 
-    font-size:38px;
+  font-size:38px;
 
-    margin-top:10px;
+  margin-top:8px;
 
 }
+
+/* SERVICES */
 
 .services{
 
-    background:#fff;
+  background:white;
 
 }
 
-.service-grid{
+.cards{
 
-    display:grid;
+  display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
 
-    gap:20px;
+  gap:20px;
 
 }
 
 .card{
 
-    background:#fff;
+  background:#fff;
 
-    border-radius:12px;
+  border-radius:12px;
 
-    overflow:hidden;
+  overflow:hidden;
 
-    box-shadow:0 8px 30px rgba(0,0,0,.10);
-
-    border:1px solid #eee;
+  box-shadow:0 5px 24px rgba(0,0,0,.09);
 
 }
 
 .card-image{
 
-    height:150px;
+  height:175px;
 
-    background:
+  background:
 
-        linear-gradient(135deg,rgba(255,196,0,.25),rgba(0,0,0,.2)),
+    linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.05)),
 
-        #333;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:#ffc400;
-
-    font-size:48px;
+    url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg") center/cover;
 
 }
 
 .card-body{
 
-    padding:25px;
+  padding:25px;
 
-    text-align:center;
+  text-align:center;
+
+  min-height:220px;
+
+}
+
+.icon{
+
+  width:58px;
+
+  height:58px;
+
+  margin:-53px auto 18px;
+
+  background:#ffc400;
+
+  border:4px solid white;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:25px;
+
+  position:relative;
 
 }
 
 .card h3{
 
-    margin-bottom:12px;
+  font-size:19px;
+
+  margin-bottom:14px;
 
 }
 
 .card p{
 
-    color:#666;
+  color:#666;
 
-    line-height:1.6;
+  line-height:1.6;
 
-    font-size:14px;
+  font-size:14px;
 
 }
+
+/* STATS */
 
 .stats{
 
-    background:#0d0d0d;
+  background:#090909;
 
-    color:#fff;
+  color:white;
 
-    padding:35px 25px;
+  border-radius:12px;
 
-}
+  display:grid;
 
-.stats-inner{
+  grid-template-columns:repeat(4,1fr);
 
-    max-width:1200px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    text-align:center;
+  padding:34px 20px;
 
 }
 
 .stat{
 
-    padding:15px;
+  text-align:center;
 
-    border-right:1px solid #333;
+  border-right:1px solid #333;
 
 }
 
 .stat:last-child{
 
-    border-right:none;
+  border-right:none;
 
 }
 
 .stat strong{
 
-    font-size:32px;
+  display:block;
 
-    color:#ffc400;
+  font-size:34px;
 
-    display:block;
+  color:#ffc400;
 
-    margin-bottom:8px;
+  margin-bottom:7px;
 
 }
 
+.stat span{
+
+  font-size:14px;
+
+  color:#ddd;
+
+}
+
+/* ABOUT */
+
 .about{
 
-    background:#f7f7f7;
+  background:#f5f5f5;
 
 }
 
 .about-grid{
 
-    display:grid;
+  display:grid;
 
-    grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1.1fr;
 
-    gap:50px;
+  gap:55px;
 
-    align-items:center;
-
-}
-
-.about h2{
-
-    font-size:42px;
-
-    margin:12px 0 20px;
+  align-items:center;
 
 }
 
-.about p{
+.about-text small{
 
-    color:#666;
+  color:#e5ad00;
 
-    line-height:1.8;
+  font-weight:800;
+
+  letter-spacing:1px;
+
+}
+
+.about-text h2{
+
+  font-size:38px;
+
+  margin:10px 0 20px;
+
+}
+
+.about-text p{
+
+  color:#555;
+
+  line-height:1.75;
+
+  margin-bottom:20px;
 
 }
 
 .checks{
 
-    margin-top:25px;
+  list-style:none;
+
+  margin-bottom:28px;
 
 }
 
-.checks div{
+.checks li{
 
-    margin:12px 0;
+  margin:12px 0;
 
-}
+  padding-left:27px;
 
-.checks span{
-
-    color:#ffc400;
-
-    font-weight:bold;
-
-    margin-right:8px;
+  position:relative;
 
 }
 
-.about-logo{
+.checks li:before{
 
-    background:#111;
+  content:"✓";
 
-    padding:35px;
+  position:absolute;
 
-    border-radius:20px;
+  left:0;
 
-    text-align:center;
+  color:#ffc400;
 
-}
-
-.about-logo img{
-
-    width:100%;
-
-    max-width:430px;
+  font-weight:900;
 
 }
 
-.projects{
+.about-image{
 
-    background:#111;
+  min-height:430px;
 
-    color:#fff;
+  border-radius:14px;
 
-}
+  background:
 
-.project-grid{
+    url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg")
 
-    display:grid;
+    center/cover no-repeat;
 
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
 
 }
 
-.project{
+/* CONTACT */
 
-    min-height:240px;
+.contact-section{
 
-    border-radius:14px;
+  background:#111;
 
-    padding:25px;
-
-    display:flex;
-
-    align-items:flex-end;
-
-    background:linear-gradient(145deg,#333,#111);
-
-    border:1px solid #333;
+  color:white;
 
 }
 
-.project span{
+.contact-grid{
 
-    color:#ffc400;
+  display:grid;
 
-    font-size:12px;
+  grid-template-columns:1fr 1fr;
 
-    letter-spacing:1px;
+  gap:55px;
 
-}
-
-.project h3{
-
-    margin-top:8px;
-
-    font-size:22px;
+  align-items:start;
 
 }
 
-.contact{
+.contact-section h2{
 
-    background:#f4f4f4;
+  font-size:38px;
 
-}
-
-.contact-box{
-
-    background:#0b0b0b;
-
-    color:#fff;
-
-    border-radius:20px;
-
-    padding:45px;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:35px;
+  margin-bottom:18px;
 
 }
 
-.contact h2{
+.contact-section p{
 
-    font-size:38px;
+  color:#ccc;
 
-    margin-bottom:18px;
+  line-height:1.7;
 
-}
-
-.contact p{
-
-    color:#ccc;
-
-    line-height:1.7;
+  margin-bottom:25px;
 
 }
 
-.contact-details{
+.contact-item{
 
-    background:#181818;
+  margin:18px 0;
 
-    padding:28px;
-
-    border-radius:12px;
+  font-size:18px;
 
 }
 
-.contact-details p{
+.contact-item strong{
 
-    margin-bottom:15px;
+  color:#ffc400;
+
+  display:inline-block;
+
+  min-width:110px;
+
+}
+
+.contact-form{
+
+  background:#1b1b1b;
+
+  padding:30px;
+
+  border-radius:12px;
 
 }
 
-.contact-details strong{
+.contact-form h3{
 
-    color:#ffc400;
+  color:#ffc400;
+
+  margin-bottom:20px;
 
 }
+
+.contact-form input,
+
+.contact-form textarea{
+
+  width:100%;
+
+  background:#111;
+
+  border:1px solid #444;
+
+  color:white;
+
+  padding:14px;
+
+  margin-bottom:12px;
+
+  border-radius:6px;
+
+  font-family:inherit;
+
+}
+
+.contact-form textarea{
+
+  min-height:110px;
+
+  resize:vertical;
+
+}
+
+.contact-form button{
+
+  border:none;
+
+  width:100%;
+
+  cursor:pointer;
+
+  font-size:15px;
+
+}
+
+/* FOOTER */
 
 footer{
 
-    background:#050505;
+  background:#050505;
 
-    color:#aaa;
+  color:#aaa;
 
-    text-align:center;
+  padding:28px 0;
 
-    padding:25px;
+  text-align:center;
 
-    border-top:1px solid #222;
+  font-size:14px;
 
 }
 
+footer strong{
+
+  color:#ffc400;
+
+}
+
+/* MOBILE */
+
 @media(max-width:900px){
 
-    .menu{
+  .menu{
 
-        display:none;
+    display:none;
 
-    }
+  }
 
-    .hero-inner,
+  .hero{
 
-    .about-grid,
+    min-height:650px;
 
-    .contact-box{
+    background-position:65% center;
 
-        grid-template-columns:1fr;
+  }
 
-    }
+  .hero h1{
 
-    .hero h1{
+    font-size:43px;
 
-        font-size:43px;
+  }
 
-    }
+  .cards{
 
-    .service-grid{
+    grid-template-columns:repeat(2,1fr);
 
-        grid-template-columns:repeat(2,1fr);
+  }
 
-    }
+  .stats{
 
-    .project-grid{
+    grid-template-columns:repeat(2,1fr);
 
-        grid-template-columns:1fr;
+    gap:25px;
 
-    }
+  }
 
-    .stats-inner{
+  .stat{
 
-        grid-template-columns:repeat(2,1fr);
+    border-right:none;
 
-    }
+  }
+
+  .about-grid,
+
+  .contact-grid{
+
+    grid-template-columns:1fr;
+
+  }
 
 }
 
 @media(max-width:600px){
 
-    .hero h1{
+  .container{
 
-        font-size:36px;
+    padding:0 18px;
 
-    }
+  }
 
-    .service-grid,
+  .hero{
 
-    .stats-inner{
+    min-height:680px;
 
-        grid-template-columns:1fr;
+    background-position:62% center;
 
-    }
+  }
 
-    .buttons{
+  .hero h1{
 
-        flex-direction:column;
+    font-size:37px;
 
-    }
+  }
+
+  .hero p{
+
+    font-size:16px;
+
+  }
+
+  .hero-buttons{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+  }
+
+  .cards{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .stats{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .section-title h2,
+
+  .about-text h2,
+
+  .contact-section h2{
+
+    font-size:30px;
+
+  }
 
 }
 
@@ -704,433 +792,425 @@ footer{
 
 <header>
 
-<div class="nav">
+  <div class="container nav">
 
-<div class="logo">
+    <div class="logo">
 
-<img src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg" alt="AS Traffic Control">
+      AS
 
-</div>
+      <span>TRAFFIC CONTROL</span>
 
-<div class="menu">
+    </div>
 
-<a href="#home">Home</a>
+    <nav class="menu">
 
-<a href="#diensten">Diensten</a>
+      <a href="#home">Home</a>
 
-<a href="#over">Over ons</a>
+      <a href="#diensten">Diensten</a>
 
-<a href="#projecten">Projecten</a>
+      <a href="#over-ons">Over ons</a>
 
-<a href="#contact">Contact</a>
+      <a href="#projecten">Projecten</a>
 
-<a href="#contact" class="offerte">Offerte aanvragen</a>
+      <a href="#vacatures">Vacatures</a>
 
-</div>
+      <a href="#contact">Contact</a>
 
-</div>
+    </nav>
+
+    <a href="#contact" class="btn btn-yellow">
+
+      Offerte aanvragen →
+
+    </a>
+
+  </div>
 
 </header>
 
+<main>
+
 <section class="hero" id="home">
 
-<div class="hero-inner">
+  <div class="container">
 
-<div>
+    <div class="hero-content">
 
-<div class="hero-small">
+      <div class="eyebrow">
 
-PROFESSIONEEL • BETROUWBAAR • GOED GEORGANISEERD
+        PROFESSIONEEL & BETROUWBAAR
 
-</div>
+      </div>
 
-<h1>
+      <h1>
 
-VEILIGHEID OP DE WEG,<br>
+        Veiligheid op de weg,<br>
 
-<span class="yellow">ALTIJD IN BEWEGING</span>
+        <span>altijd in beweging</span>
 
-</h1>
+      </h1>
 
-<p>
+      <p>
 
-AS Traffic Control levert professionele verkeersregelaars voor
+        AS Traffic Control levert professionele verkeersregelaars
 
-wegwerkzaamheden, evenementen, bouwplaatsen en tijdelijke
+        voor iedere situatie. Veiligheid, betrouwbaarheid en kwaliteit
 
-verkeerssituaties. Veiligheid, betrouwbaarheid en duidelijke
+        staan bij ons altijd op nummer één.
 
-communicatie staan bij ons centraal.
+      </p>
 
-</p>
+      <div class="hero-buttons">
 
-<div class="buttons">
+        <a href="#contact" class="btn btn-yellow">
 
-<a href="#contact" class="btn-yellow">
+          Offerte aanvragen →
 
-Offerte aanvragen
+        </a>
 
-</a>
+        <a href="#diensten" class="btn btn-outline">
 
-<a href="#diensten" class="btn-dark">
+          Onze diensten →
 
-Onze diensten
+        </a>
 
-</a>
+      </div>
 
-</div>
+    </div>
 
-</div>
-
-<div class="hero-logo">
-
-<img
-
-src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
-
-alt="AS Traffic Control logo">
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 <section class="services" id="diensten">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<span>ONZE DIENSTEN</span>
+      <small>ONZE DIENSTEN</small>
 
-<h2>Waar wij u mee helpen</h2>
+      <h2>Waar wij u mee helpen</h2>
 
-</div>
+    </div>
 
-<div class="service-grid">
+    <div class="cards">
 
-<div class="card">
+      <article class="card">
 
-<div class="card-image">🚦</div>
+        <div class="card-image"></div>
 
-<div class="card-body">
+        <div class="card-body">
 
-<h3>Verkeersregeling</h3>
+          <div class="icon">🚦</div>
 
-<p>
+          <h3>Verkeersregeling</h3>
 
-Professionele verkeersregelaars voor een veilige en vlotte
+          <p>
 
-doorstroming van verkeer.
+            Professionele verkeersregelaars voor een veilige
 
-</p>
+            en vlotte doorstroming van het verkeer.
 
-</div>
+          </p>
 
-</div>
+        </div>
 
-<div class="card">
+      </article>
 
-<div class="card-image">🚧</div>
+      <article class="card">
 
-<div class="card-body">
+        <div class="card-image"></div>
 
-<h3>Wegafzettingen</h3>
+        <div class="card-body">
 
-<p>
+          <div class="icon">🚧</div>
 
-Begeleiding bij wegwerkzaamheden, omleidingen en tijdelijke
+          <h3>Wegafzettingen</h3>
 
-verkeersmaatregelen.
+          <p>
 
-</p>
+            Complete wegafzettingen en signalering volgens
 
-</div>
+            de geldende richtlijnen en wetgeving.
 
-</div>
+          </p>
 
-<div class="card">
+        </div>
 
-<div class="card-image">👥</div>
+      </article>
 
-<div class="card-body">
+      <article class="card">
 
-<h3>Evenementen</h3>
+        <div class="card-image"></div>
 
-<p>
+        <div class="card-body">
 
-Verkeers- en parkeerbegeleiding bij evenementen, festivals en
+          <div class="icon">👥</div>
 
-publieke bijeenkomsten.
+          <h3>Evenementen</h3>
 
-</p>
+          <p>
 
-</div>
+            Verkeers- en parkeerbegeleiding bij evenementen,
 
-</div>
+            festivals en publieke bijeenkomsten.
 
-<div class="card">
+          </p>
 
-<div class="card-image">🏗️</div>
+        </div>
 
-<div class="card-body">
+      </article>
 
-<h3>Bouwplaatsen</h3>
+      <article class="card">
 
-<p>
+        <div class="card-image"></div>
 
-Veilige begeleiding van verkeer rondom bouwplaatsen en
+        <div class="card-body">
 
-infrastructurele projecten.
+          <div class="icon">👷</div>
 
-</p>
+          <h3>Bouwplaatsbeveiliging</h3>
 
-</div>
+          <p>
 
-</div>
+            Verkeersmaatregelen en begeleiding rondom
 
-</div>
+            bouwplaatsen voor maximale veiligheid.
 
-</div>
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <div style="height:30px"></div>
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <strong>100+</strong>
+
+        <span>Opgeleide verkeersregelaars</span>
+
+      </div>
+
+      <div class="stat">
+
+        <strong>100%</strong>
+
+        <span>Veiligheid voorop</span>
+
+      </div>
+
+      <div class="stat">
+
+        <strong>24/7</strong>
+
+        <span>Beschikbaar</span>
+
+      </div>
+
+      <div class="stat">
+
+        <strong>✓</strong>
+
+        <span>Door heel Nederland</span>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
-<div class="stats">
+<section class="about" id="over-ons">
 
-<div class="stats-inner">
+  <div class="container about-grid">
 
-<div class="stat">
+    <div class="about-text">
 
-<strong>100%</strong>
+      <small>OVER ONS</small>
 
-Veiligheid voorop
+      <h2>AS Traffic Control</h2>
 
-</div>
+      <p>
 
-<div class="stat">
+        Wij zijn een professioneel verkeersregelaarsbedrijf met als missie:
 
-<strong>24/7</strong>
+        veiligheid op de weg garanderen in elke situatie.
 
-Flexibel inzetbaar
+        Met goed opgeleide medewerkers, duidelijke communicatie
 
-</div>
+        en strakke planning zorgen wij voor een veilige en efficiënte
 
-<div class="stat">
+        verkeersdoorstroming.
 
-<strong>NL</strong>
+      </p>
 
-Heel Nederland
+      <ul class="checks">
 
-</div>
+        <li>Professioneel en betrouwbaar</li>
 
-<div class="stat">
+        <li>Goed opgeleide en gecertificeerde medewerkers</li>
 
-<strong>AS</strong>
+        <li>Duidelijke communicatie en planning</li>
 
-Professioneel
+        <li>Flexibel en 24/7 inzetbaar</li>
 
-</div>
+        <li>Werkzaam door heel Nederland</li>
 
-</div>
+      </ul>
 
-</div>
+      <a href="#contact" class="btn btn-yellow">
 
-<section class="about" id="over">
+        Neem contact op →
 
-<div class="container about-grid">
+      </a>
 
-<div>
+    </div>
 
-<span class="yellow">
+    <div class="about-image"></div>
 
-OVER ONS
-
-</span>
-
-<h2>
-
-AS Traffic Control
-
-</h2>
-
-<p>
-
-Wij zijn een professioneel verkeersregelbedrijf met focus op
-
-veiligheid, kwaliteit en betrouwbare dienstverlening.
-
-Met goed georganiseerde medewerkers en duidelijke communicatie
-
-zorgen wij voor een veilige verkeersdoorstroming.
-
-</p>
-
-<div class="checks">
-
-<div><span>✓</span> Professioneel en betrouwbaar</div>
-
-<div><span>✓</span> Goed georganiseerde medewerkers</div>
-
-<div><span>✓</span> Duidelijke communicatie</div>
-
-<div><span>✓</span> Flexibel inzetbaar</div>
-
-</div>
-
-</div>
-
-<div class="about-logo">
-
-<img
-
-src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
-
-alt="AS Traffic Control">
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
-<section class="projects" id="projecten">
+<section class="contact-section" id="contact">
 
-<div class="container">
+  <div class="container contact-grid">
 
-<div class="section-title">
+    <div>
 
-<span>ONZE PROJECTEN</span>
+      <div class="eyebrow">CONTACT</div>
 
-<h2>
+      <h2>Neem contact met ons op</h2>
 
-Professionele inzet in elke situatie
+      <p>
 
-</h2>
+        Heeft u verkeersregelaars nodig voor een project,
 
-</div>
+        evenement, wegafzetting of bouwplaats?
 
-<div class="project-grid">
+        Neem contact op met AS Traffic Control.
 
-<div class="project">
+      </p>
 
-<div>
+      <div class="contact-item">
 
-<span>WEGWERKZAAMHEDEN</span>
+        <strong>Telefoon:</strong>
 
-<h3>Veilige verkeersbegeleiding</h3>
+        <a href="tel:+31618259501">+31 6 18259501</a>
 
-</div>
+      </div>
 
-</div>
+      <div class="contact-item">
 
-<div class="project">
+        <strong>E-mail:</strong>
 
-<div>
+        <a href="mailto:info@astrafficcontrol.nl">
 
-<span>EVENEMENTEN</span>
+          info@astrafficcontrol.nl
 
-<h3>Verkeer en bezoekersstromen</h3>
+        </a>
 
-</div>
+      </div>
 
-</div>
+      <div class="contact-item">
 
-<div class="project">
+        <strong>Werkgebied:</strong>
 
-<div>
+        Heel Nederland
 
-<span>BOUW & INFRA</span>
+      </div>
 
-<h3>Veilige bouwlocaties</h3>
+      <div class="contact-item">
 
-</div>
+        <strong>Beschikbaar:</strong>
 
-</div>
+        24/7
 
-</div>
+      </div>
 
-</div>
+    </div>
+
+    <div class="contact-form">
+
+      <h3>Offerte aanvragen</h3>
+
+      <form action="mailto:info@astrafficcontrol.nl"
+
+            method="post"
+
+            enctype="text/plain">
+
+        <input
+
+          type="text"
+
+          name="Naam"
+
+          placeholder="Uw naam"
+
+          required>
+
+        <input
+
+          type="email"
+
+          name="Email"
+
+          placeholder="E-mailadres"
+
+          required>
+
+        <input
+
+          type="tel"
+
+          name="Telefoon"
+
+          placeholder="Telefoonnummer">
+
+        <textarea
+
+          name="Bericht"
+
+          placeholder="Uw bericht"></textarea>
+
+        <button type="submit" class="btn btn-yellow">
+
+          Offerte aanvragen →
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
 
 </section>
 
-<section class="contact" id="contact">
-
-<div class="container">
-
-<div class="contact-box">
-
-<div>
-
-<h2>
-
-Contact met AS Traffic Control
-
-</h2>
-
-<p>
-
-Heeft u verkeersregelaars nodig voor uw project,
-
-evenement of werkzaamheden?
-
-Neem contact met ons op voor beschikbaarheid of een vrijblijvende offerte.
-
-</p>
-
-<br>
-
-<a
-
-href="mailto:info@astrafficcontrol.nl"
-
-class="btn-yellow">
-
-Offerte aanvragen
-
-</a>
-
-</div>
-
-<div class="contact-details">
-
-<p>
-
-<strong>E-mail</strong><br>
-
-info@astrafficcontrol.nl
-
-</p>
-
-<p>
-
-<strong>Werkgebied</strong><br>
-
-Heel Nederland
-
-</p>
-
-<p>
-
-<strong>Bedrijf</strong><br>
-
-AS Traffic Control
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+</main>
 
 <footer>
 
-© 2026 AS Traffic Control —
+  <div class="container">
 
-Veiligheid op de weg, altijd in beweging.
+    © 2026 <strong>AS Traffic Control</strong> —
+
+    Veiligheid op de weg, altijd in beweging.
+
+    &nbsp; | &nbsp;
+
+    Tel: +31 6 18259501
+
+  </div>
 
 </footer>
 
