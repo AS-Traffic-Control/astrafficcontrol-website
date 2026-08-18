@@ -1198,13 +1198,7 @@ info@astrafficcontrol.nl
 
 <div class="application-form">
 
-<form
-
-action="mailto:info@astrafficcontrol.nl"
-
-method="post"
-
-enctype="text/plain">
+<form id="jobApplicationForm">
 
 <input
 
@@ -1507,7 +1501,26 @@ info@astrafficcontrol.nl
 </a>
 
 </footer>
+<script>
+document.getElementById("jobApplicationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    const data = new FormData(this);
+    let body = "";
+
+    for (const [key, value] of data.entries()) {
+        body += key + ": " + value + "\n";
+    }
+
+    const subject = "Nieuwe sollicitatie - AS Traffic Control";
+
+    window.location.href =
+        "mailto:info@astrafficcontrol.nl?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+});
+</script>
 </body>
 
 </html>
