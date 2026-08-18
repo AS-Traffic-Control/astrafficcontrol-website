@@ -60,23 +60,23 @@ a{
 
 header{
 
-  position:absolute;
+  background:#080808;
+
+  color:white;
+
+  position:sticky;
 
   top:0;
 
-  left:0;
+  z-index:100;
 
-  width:100%;
-
-  z-index:10;
-
-  padding:18px 0;
-
-  color:white;
+  border-bottom:1px solid #222;
 
 }
 
 .nav{
+
+  min-height:86px;
 
   display:flex;
 
@@ -88,29 +88,13 @@ header{
 
 }
 
-.logo{
+.logo-img{
 
-  font-size:26px;
+  width:125px;
 
-  font-weight:900;
+  height:70px;
 
-  color:#ffc400;
-
-  line-height:1;
-
-}
-
-.logo span{
-
-  color:#fff;
-
-  display:block;
-
-  font-size:12px;
-
-  letter-spacing:4px;
-
-  margin-top:5px;
+  object-fit:contain;
 
 }
 
@@ -118,9 +102,9 @@ header{
 
   display:flex;
 
-  align-items:center;
+  gap:27px;
 
-  gap:28px;
+  align-items:center;
 
   font-size:14px;
 
@@ -138,13 +122,11 @@ header{
 
   display:inline-block;
 
-  padding:15px 22px;
+  padding:14px 22px;
 
   border-radius:7px;
 
   font-weight:700;
-
-  transition:.2s;
 
 }
 
@@ -153,12 +135,6 @@ header{
   background:#ffc400;
 
   color:#111;
-
-}
-
-.btn-yellow:hover{
-
-  background:#ffd633;
 
 }
 
@@ -174,27 +150,27 @@ header{
 
 .hero{
 
-  min-height:610px;
-
-  color:white;
-
-  background:
-
-    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.78) 38%,rgba(0,0,0,.12) 72%),
-
-    url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg") center/cover no-repeat;
+  min-height:620px;
 
   display:flex;
 
   align-items:center;
 
-  padding-top:100px;
+  color:white;
+
+  background:
+
+    linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.72) 43%,rgba(0,0,0,.08) 78%),
+
+    url("9098305B-2116-4B08-8A35-5977165A84AB.jpeg")
+
+    center/cover no-repeat;
 
 }
 
 .hero-content{
 
-  max-width:590px;
+  max-width:600px;
 
 }
 
@@ -216,7 +192,7 @@ header{
 
   font-size:58px;
 
-  line-height:1.05;
+  line-height:1.04;
 
   text-transform:uppercase;
 
@@ -232,11 +208,11 @@ header{
 
 .hero p{
 
-  color:#e5e5e5;
-
   font-size:18px;
 
   line-height:1.7;
+
+  color:#eee;
 
   max-width:560px;
 
@@ -252,7 +228,7 @@ header{
 
 }
 
-/* SECTION */
+/* GENERAL */
 
 section{
 
@@ -264,13 +240,13 @@ section{
 
   text-align:center;
 
-  margin-bottom:38px;
+  margin-bottom:35px;
 
 }
 
 .section-title small{
 
-  color:#e5ad00;
+  color:#e4aa00;
 
   font-weight:800;
 
@@ -294,95 +270,25 @@ section{
 
 }
 
-.cards{
+.services-image{
 
-  display:grid;
+  width:100%;
 
-  grid-template-columns:repeat(4,1fr);
+  display:block;
 
-  gap:20px;
+  border-radius:14px;
 
-}
-
-.card{
-
-  background:#fff;
-
-  border-radius:12px;
-
-  overflow:hidden;
-
-  box-shadow:0 5px 24px rgba(0,0,0,.09);
-
-}
-
-.card-image{
-
-  height:175px;
-
-  background:
-
-    linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.05)),
-
-    url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg") center/cover;
-
-}
-
-.card-body{
-
-  padding:25px;
-
-  text-align:center;
-
-  min-height:220px;
-
-}
-
-.icon{
-
-  width:58px;
-
-  height:58px;
-
-  margin:-53px auto 18px;
-
-  background:#ffc400;
-
-  border:4px solid white;
-
-  border-radius:50%;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:25px;
-
-  position:relative;
-
-}
-
-.card h3{
-
-  font-size:19px;
-
-  margin-bottom:14px;
-
-}
-
-.card p{
-
-  color:#666;
-
-  line-height:1.6;
-
-  font-size:14px;
+  box-shadow:0 10px 35px rgba(0,0,0,.12);
 
 }
 
 /* STATS */
+
+.stats-wrap{
+
+  padding-top:30px;
+
+}
 
 .stats{
 
@@ -418,9 +324,9 @@ section{
 
   display:block;
 
-  font-size:34px;
-
   color:#ffc400;
+
+  font-size:34px;
 
   margin-bottom:7px;
 
@@ -428,9 +334,9 @@ section{
 
 .stat span{
 
-  font-size:14px;
-
   color:#ddd;
+
+  font-size:14px;
 
 }
 
@@ -438,7 +344,7 @@ section{
 
 .about{
 
-  background:#f5f5f5;
+  background:#f4f4f4;
 
 }
 
@@ -446,9 +352,9 @@ section{
 
   display:grid;
 
-  grid-template-columns:1fr 1.1fr;
+  grid-template-columns:1fr 1.05fr;
 
-  gap:55px;
+  gap:50px;
 
   align-items:center;
 
@@ -456,17 +362,15 @@ section{
 
 .about-text small{
 
-  color:#e5ad00;
+  color:#e4aa00;
 
   font-weight:800;
-
-  letter-spacing:1px;
 
 }
 
 .about-text h2{
 
-  font-size:38px;
+  font-size:40px;
 
   margin:10px 0 20px;
 
@@ -476,7 +380,7 @@ section{
 
   color:#555;
 
-  line-height:1.75;
+  line-height:1.8;
 
   margin-bottom:20px;
 
@@ -494,7 +398,7 @@ section{
 
   margin:12px 0;
 
-  padding-left:27px;
+  padding-left:28px;
 
   position:relative;
 
@@ -510,31 +414,33 @@ section{
 
   color:#ffc400;
 
-  font-weight:900;
+  font-weight:bold;
 
 }
 
-.about-image{
+.about-photo{
 
-  min-height:430px;
+  min-height:460px;
 
-  border-radius:14px;
+  border-radius:16px;
+
+  overflow:hidden;
 
   background:
 
     url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg")
 
-    center/cover no-repeat;
+    center top/cover no-repeat;
 
-  box-shadow:0 8px 30px rgba(0,0,0,.12);
+  box-shadow:0 10px 35px rgba(0,0,0,.14);
 
 }
 
 /* CONTACT */
 
-.contact-section{
+.contact{
 
-  background:#111;
+  background:#0a0a0a;
 
   color:white;
 
@@ -546,13 +452,11 @@ section{
 
   grid-template-columns:1fr 1fr;
 
-  gap:55px;
-
-  align-items:start;
+  gap:50px;
 
 }
 
-.contact-section h2{
+.contact h2{
 
   font-size:38px;
 
@@ -560,19 +464,17 @@ section{
 
 }
 
-.contact-section p{
+.contact p{
 
   color:#ccc;
 
   line-height:1.7;
 
-  margin-bottom:25px;
-
 }
 
 .contact-item{
 
-  margin:18px 0;
+  margin-top:20px;
 
   font-size:18px;
 
@@ -580,25 +482,25 @@ section{
 
 .contact-item strong{
 
-  color:#ffc400;
-
   display:inline-block;
 
-  min-width:110px;
+  color:#ffc400;
+
+  min-width:105px;
 
 }
 
-.contact-form{
+.form{
 
-  background:#1b1b1b;
+  background:#171717;
 
   padding:30px;
 
-  border-radius:12px;
+  border-radius:14px;
 
 }
 
-.contact-form h3{
+.form h3{
 
   color:#ffc400;
 
@@ -606,21 +508,21 @@ section{
 
 }
 
-.contact-form input,
+.form input,
 
-.contact-form textarea{
+.form textarea{
 
   width:100%;
-
-  background:#111;
-
-  border:1px solid #444;
-
-  color:white;
 
   padding:14px;
 
   margin-bottom:12px;
+
+  background:#0d0d0d;
+
+  border:1px solid #444;
+
+  color:white;
 
   border-radius:6px;
 
@@ -628,23 +530,19 @@ section{
 
 }
 
-.contact-form textarea{
+.form textarea{
 
   min-height:110px;
 
-  resize:vertical;
-
 }
 
-.contact-form button{
-
-  border:none;
+.form button{
 
   width:100%;
 
-  cursor:pointer;
+  border:none;
 
-  font-size:15px;
+  cursor:pointer;
 
 }
 
@@ -656,11 +554,9 @@ footer{
 
   color:#aaa;
 
-  padding:28px 0;
-
   text-align:center;
 
-  font-size:14px;
+  padding:26px 15px;
 
 }
 
@@ -680,23 +576,17 @@ footer strong{
 
   }
 
-  .hero{
-
-    min-height:650px;
-
-    background-position:65% center;
-
-  }
-
   .hero h1{
 
     font-size:43px;
 
   }
 
-  .cards{
+  .about-grid,
 
-    grid-template-columns:repeat(2,1fr);
+  .contact-grid{
+
+    grid-template-columns:1fr;
 
   }
 
@@ -714,14 +604,6 @@ footer strong{
 
   }
 
-  .about-grid,
-
-  .contact-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
 }
 
 @media(max-width:600px){
@@ -732,17 +614,23 @@ footer strong{
 
   }
 
+  .nav .btn-yellow{
+
+    display:none;
+
+  }
+
   .hero{
 
-    min-height:680px;
+    min-height:650px;
 
-    background-position:62% center;
+    background-position:63% center;
 
   }
 
   .hero h1{
 
-    font-size:37px;
+    font-size:36px;
 
   }
 
@@ -760,12 +648,6 @@ footer strong{
 
   }
 
-  .cards{
-
-    grid-template-columns:1fr;
-
-  }
-
   .stats{
 
     grid-template-columns:1fr;
@@ -776,9 +658,15 @@ footer strong{
 
   .about-text h2,
 
-  .contact-section h2{
+  .contact h2{
 
     font-size:30px;
+
+  }
+
+  .about-photo{
+
+    min-height:330px;
 
   }
 
@@ -794,13 +682,13 @@ footer strong{
 
   <div class="container nav">
 
-    <div class="logo">
+    <img
 
-      AS
+      src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
 
-      <span>TRAFFIC CONTROL</span>
+      alt="AS Traffic Control"
 
-    </div>
+      class="logo-img">
 
     <nav class="menu">
 
@@ -811,8 +699,6 @@ footer strong{
       <a href="#over-ons">Over ons</a>
 
       <a href="#projecten">Projecten</a>
-
-      <a href="#vacatures">Vacatures</a>
 
       <a href="#contact">Contact</a>
 
@@ -890,135 +776,53 @@ footer strong{
 
       <small>ONZE DIENSTEN</small>
 
-      <h2>Waar wij u mee helpen</h2>
+      <h2>Professioneel verkeersmanagement</h2>
 
     </div>
 
-    <div class="cards">
+    <img
 
-      <article class="card">
+      class="services-image"
 
-        <div class="card-image"></div>
+      src="16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg"
 
-        <div class="card-body">
+      alt="Diensten AS Traffic Control">
 
-          <div class="icon">🚦</div>
+    <div class="stats-wrap">
 
-          <h3>Verkeersregeling</h3>
+      <div class="stats">
 
-          <p>
+        <div class="stat">
 
-            Professionele verkeersregelaars voor een veilige
+          <strong>100+</strong>
 
-            en vlotte doorstroming van het verkeer.
-
-          </p>
+          <span>Opgeleide verkeersregelaars</span>
 
         </div>
 
-      </article>
+        <div class="stat">
 
-      <article class="card">
+          <strong>100%</strong>
 
-        <div class="card-image"></div>
-
-        <div class="card-body">
-
-          <div class="icon">🚧</div>
-
-          <h3>Wegafzettingen</h3>
-
-          <p>
-
-            Complete wegafzettingen en signalering volgens
-
-            de geldende richtlijnen en wetgeving.
-
-          </p>
+          <span>Veiligheid voorop</span>
 
         </div>
 
-      </article>
+        <div class="stat">
 
-      <article class="card">
+          <strong>24/7</strong>
 
-        <div class="card-image"></div>
-
-        <div class="card-body">
-
-          <div class="icon">👥</div>
-
-          <h3>Evenementen</h3>
-
-          <p>
-
-            Verkeers- en parkeerbegeleiding bij evenementen,
-
-            festivals en publieke bijeenkomsten.
-
-          </p>
+          <span>Beschikbaar</span>
 
         </div>
 
-      </article>
+        <div class="stat">
 
-      <article class="card">
+          <strong>NL</strong>
 
-        <div class="card-image"></div>
-
-        <div class="card-body">
-
-          <div class="icon">👷</div>
-
-          <h3>Bouwplaatsbeveiliging</h3>
-
-          <p>
-
-            Verkeersmaatregelen en begeleiding rondom
-
-            bouwplaatsen voor maximale veiligheid.
-
-          </p>
+          <span>Door heel Nederland</span>
 
         </div>
-
-      </article>
-
-    </div>
-
-    <div style="height:30px"></div>
-
-    <div class="stats">
-
-      <div class="stat">
-
-        <strong>100+</strong>
-
-        <span>Opgeleide verkeersregelaars</span>
-
-      </div>
-
-      <div class="stat">
-
-        <strong>100%</strong>
-
-        <span>Veiligheid voorop</span>
-
-      </div>
-
-      <div class="stat">
-
-        <strong>24/7</strong>
-
-        <span>Beschikbaar</span>
-
-      </div>
-
-      <div class="stat">
-
-        <strong>✓</strong>
-
-        <span>Door heel Nederland</span>
 
       </div>
 
@@ -1040,15 +844,21 @@ footer strong{
 
       <p>
 
-        Wij zijn een professioneel verkeersregelaarsbedrijf met als missie:
+        Wij zijn een professioneel verkeersregelaarsbedrijf
 
-        veiligheid op de weg garanderen in elke situatie.
+        met als missie veiligheid op de weg te garanderen
+
+        in iedere situatie.
+
+      </p>
+
+      <p>
 
         Met goed opgeleide medewerkers, duidelijke communicatie
 
-        en strakke planning zorgen wij voor een veilige en efficiënte
+        en een strakke planning zorgen wij voor een veilige
 
-        verkeersdoorstroming.
+        en efficiënte verkeersdoorstroming.
 
       </p>
 
@@ -1074,29 +884,37 @@ footer strong{
 
     </div>
 
-    <div class="about-image"></div>
+    <div class="about-photo"></div>
 
   </div>
 
 </section>
 
-<section class="contact-section" id="contact">
+<section class="contact" id="contact">
 
   <div class="container contact-grid">
 
     <div>
 
-      <div class="eyebrow">CONTACT</div>
+      <div class="eyebrow">
 
-      <h2>Neem contact met ons op</h2>
+        CONTACT
+
+      </div>
+
+      <h2>
+
+        Neem contact met ons op
+
+      </h2>
 
       <p>
 
-        Heeft u verkeersregelaars nodig voor een project,
+        Heeft u verkeersregelaars nodig voor wegwerkzaamheden,
 
-        evenement, wegafzetting of bouwplaats?
+        evenementen, een bouwplaats of andere verkeerssituatie?
 
-        Neem contact op met AS Traffic Control.
+        Neem vrijblijvend contact met ons op.
 
       </p>
 
@@ -1104,7 +922,11 @@ footer strong{
 
         <strong>Telefoon:</strong>
 
-        <a href="tel:+31618259501">+31 6 18259501</a>
+        <a href="tel:+31618259501">
+
+          +31 6 18259501
+
+        </a>
 
       </div>
 
@@ -1138,15 +960,21 @@ footer strong{
 
     </div>
 
-    <div class="contact-form">
+    <div class="form">
 
-      <h3>Offerte aanvragen</h3>
+      <h3>
 
-      <form action="mailto:info@astrafficcontrol.nl"
+        Offerte aanvragen
 
-            method="post"
+      </h3>
 
-            enctype="text/plain">
+      <form
+
+        action="mailto:info@astrafficcontrol.nl"
+
+        method="post"
+
+        enctype="text/plain">
 
         <input
 
@@ -1162,7 +990,7 @@ footer strong{
 
           type="email"
 
-          name="Email"
+          name="E-mail"
 
           placeholder="E-mailadres"
 
@@ -1182,7 +1010,11 @@ footer strong{
 
           placeholder="Uw bericht"></textarea>
 
-        <button type="submit" class="btn btn-yellow">
+        <button
+
+          type="submit"
+
+          class="btn btn-yellow">
 
           Offerte aanvragen →
 
@@ -1200,17 +1032,15 @@ footer strong{
 
 <footer>
 
-  <div class="container">
+  © 2026
 
-    © 2026 <strong>AS Traffic Control</strong> —
+  <strong>AS Traffic Control</strong>
 
-    Veiligheid op de weg, altijd in beweging.
+  — Veiligheid op de weg, altijd in beweging.
 
-    &nbsp; | &nbsp;
+  &nbsp; | &nbsp;
 
-    Tel: +31 6 18259501
-
-  </div>
+  +31 6 18259501
 
 </footer>
 
