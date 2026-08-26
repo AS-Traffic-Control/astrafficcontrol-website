@@ -1152,13 +1152,29 @@ ${message}
 `;
 
 
-    const mail =
-        "mailto:offerte@astrafficcontrol.nl" +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-
-    window.location.href = mail;
+    fetch("https://formspree.io/f/xoeagbpq", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  body: JSON.stringify({
+    name: name,
+    email: email,
+    phone: phone,
+    message: message
+  })
+})
+.then(response => {
+  if (response.ok) {
+    alert("Bedankt! Uw offerteaanvraag is succesvol verzonden.");
+  } else {
+    alert("Er is iets misgegaan. Probeer het opnieuw.");
+  }
+})
+.catch(() => {
+  alert("Er is iets misgegaan. Probeer het opnieuw.");
+});
 
 }
 
