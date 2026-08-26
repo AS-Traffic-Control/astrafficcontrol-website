@@ -1080,13 +1080,33 @@ ${message}
 `;
 
 
-    const mail =
-        "mailto:sollicitate@astrafficcontrol.nl" +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-
-    window.location.href = mail;
+    fetch("https://formspree.io/f/xgawgqzv", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  body: JSON.stringify({
+    name: name,
+    email: email,
+    phone: phone,
+    city: city,
+    certificate: certificate,
+    experience: experience,
+    availability: availability,
+    message: message
+  })
+})
+.then(response => {
+  if (response.ok) {
+    alert("Bedankt! Uw sollicitatie is succesvol verzonden.");
+  } else {
+    alert("Er is iets misgegaan. Probeer het opnieuw.");
+  }
+})
+.catch(() => {
+  alert("Er is iets misgegaan. Probeer het opnieuw.");
+});
 
 }
 
