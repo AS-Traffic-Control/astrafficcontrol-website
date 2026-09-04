@@ -2,987 +2,1979 @@
 <html lang="nl">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AS Traffic Control | Verkeersregelaars & Verkeersbegeleiding</title>
+<title>
+AS Traffic Control | Verkeersregelaars & Verkeersbegeleiding
+</title>
 
-<meta name="description" content="AS Traffic Control biedt professionele verkeersregelaars en verkeersbegeleiding voor wegwerkzaamheden, projecten en evenementen.">
-<link rel="canonical" href="https://astrafficcontrol.nl/">
+<meta
+name="description"
+content="AS Traffic Control biedt professionele verkeersregelaars en verkeersbegeleiding voor wegwerkzaamheden, projecten en evenementen.">
+
+<link
+rel="canonical"
+href="https://astrafficcontrol.nl/">
 
 <style>
 
+/* =========================================================
+   BASIS
+========================================================= */
+
 :root{
-    --gold:#f4b400;
-    --gold-light:#ffc928;
-    --orange:#ff9f00;
-    --black:#050505;
-    --black-2:#0a0a0c;
-    --black-3:#111115;
-    --panel:#151519;
-    --line:#2a2a30;
+
+    --navy:#080d1d;
+    --navy2:#0c1228;
+    --navy3:#101832;
+
+    --panel:#121b37;
+    --panel2:#172140;
+
+    --gold:#f2aa28;
+    --gold2:#ffc341;
+    --orange:#f08a24;
+
     --white:#ffffff;
-    --muted:#b7b7be;
-    --soft:#ececf0;
+    --soft:#d5d9e4;
+    --muted:#9fa8bc;
+
+    --line:rgba(255,255,255,.12);
+
 }
 
+
 *{
+
     box-sizing:border-box;
     margin:0;
     padding:0;
+
 }
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
+
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--black);
-    color:var(--white);
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:var(--navy);
+
+    color:white;
+
     overflow-x:hidden;
+
 }
 
+
 a{
-    text-decoration:none;
+
     color:inherit;
+    text-decoration:none;
+
 }
+
+
+img{
+
+    display:block;
+    max-width:100%;
+
+}
+
 
 button,
 input,
-textarea,
-select{
-    font:inherit;
+select,
+textarea{
+
+    font-family:inherit;
+
 }
 
-img{
-    max-width:100%;
-}
 
 .container{
-    width:min(1180px,calc(100% - 40px));
+
+    width:min(
+        1180px,
+        calc(100% - 40px)
+    );
+
     margin:auto;
+
 }
 
-/* HEADER */
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+
+    background:#050916;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+    color:#c9cfdd;
+
+    font-size:12px;
+
+}
+
+
+.topbar-inner{
+
+    min-height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+}
+
+
+.topbar-left,
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+
+.topbar strong{
+
+    color:var(--gold2);
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
+
     position:sticky;
+
     top:0;
-    z-index:1000;
-    background:rgba(5,5,5,.96);
-    border-bottom:1px solid #242424;
-    backdrop-filter:blur(14px);
+
+    z-index:999;
+
+    background:
+    rgba(8,13,29,.96);
+
+    backdrop-filter:
+    blur(12px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
 }
+
 
 .nav{
-    min-height:86px;
+
+    min-height:84px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:28px;
+
 }
+
 
 .logo{
-    width:128px;
+
+    width:130px;
+
     height:68px;
+
     object-fit:contain;
+
 }
+
 
 .menu{
+
     display:flex;
+
     align-items:center;
-    gap:26px;
+
+    justify-content:center;
+
+    gap:29px;
+
     font-size:14px;
+
     font-weight:700;
+
 }
+
 
 .menu a{
-    color:#f1f1f1;
-    transition:.25s ease;
+
+    color:#f2f4f9;
+
+    transition:.25s;
+
 }
+
 
 .menu a:hover{
-    color:var(--gold-light);
+
+    color:var(--gold2);
+
 }
 
-.header-btn,
-.gold-btn{
+
+.header-btn{
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:8px;
-    background:linear-gradient(135deg,var(--orange),var(--gold-light));
-    color:#080808;
-    padding:14px 20px;
+
+    padding:14px 21px;
+
     border-radius:8px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--orange),
+        var(--gold2)
+    );
+
+    color:#111;
+
     font-weight:900;
-    border:none;
-    cursor:pointer;
-    box-shadow:0 8px 24px rgba(244,180,0,.2);
-    transition:.25s ease;
+
+    box-shadow:
+    0 8px 25px
+    rgba(242,170,40,.20);
+
 }
 
-.header-btn:hover,
-.gold-btn:hover{
-    transform:translateY(-2px);
-}
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-    position:relative;
-    min-height:690px;
-    display:flex;
-    align-items:flex-end;
-    overflow:hidden;
-    background:#060606;
-}
 
-.hero-bg{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
     background:
-        linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.68) 42%,rgba(0,0,0,.22) 100%),
-        linear-gradient(0deg,rgba(0,0,0,.95) 0%,transparent 50%);
+    radial-gradient(
+        circle at 80% 30%,
+        rgba(73,61,145,.22),
+        transparent 35%
+    ),
+    var(--navy);
+
+    padding:0 0 48px;
+
 }
 
-.hero-content{
+
+.hero-frame{
+
+    width:100%;
+
     position:relative;
-    z-index:2;
-    padding:120px 0 95px;
-    max-width:700px;
+
+    overflow:hidden;
+
+    background:#050914;
+
 }
 
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    color:var(--gold-light);
-    font-size:13px;
-    letter-spacing:2px;
-    font-weight:900;
-    text-transform:uppercase;
-    margin-bottom:20px;
+
+.hero-image{
+
+    width:100%;
+
+    height:auto;
+
+    max-height:720px;
+
+    object-fit:cover;
+
+    object-position:center;
+
 }
 
-.eyebrow:before{
-    content:"";
-    width:30px;
-    height:2px;
-    background:var(--gold);
+
+/* أهم نقطة:
+   لا يوجد أي نص فوق الصورة
+   لمنع التكرار والتداخل */
+
+.hero-bottom{
+
+    padding-top:28px;
+
 }
 
-.hero h1{
-    font-size:clamp(42px,6vw,76px);
-    line-height:1.02;
-    margin-bottom:22px;
-    letter-spacing:-2px;
+
+.hero-quick{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    border:
+    1px solid var(--line);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:
+    rgba(15,23,49,.96);
+
 }
 
-.hero h1 span{
-    color:var(--gold-light);
-}
 
-.hero p{
-    max-width:650px;
-    color:#dedede;
-    font-size:18px;
-    line-height:1.75;
-    margin-bottom:28px;
-}
+.quick-item{
 
-.hero-actions{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
+    padding:22px 15px;
 
-.outline-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 20px;
-    border:1px solid rgba(255,255,255,.35);
-    border-radius:8px;
-    font-weight:800;
-    background:rgba(255,255,255,.06);
-    color:white;
-}
-
-.outline-btn:hover{
-    border-color:var(--gold);
-    color:var(--gold-light);
-}
-
-/* GENERAL */
-
-section{
-    position:relative;
-}
-
-.section-space{
-    padding:90px 0;
-}
-
-.section-head{
-    max-width:760px;
-    margin:0 auto 48px;
     text-align:center;
+
+    border-right:
+    1px solid var(--line);
+
 }
 
-.section-head.left{
-    margin-left:0;
-    text-align:left;
+
+.quick-item:last-child{
+
+    border-right:none;
+
 }
 
-.kicker{
+
+.quick-icon{
+
+    color:var(--gold2);
+
+    font-size:21px;
+
+    margin-bottom:7px;
+
+}
+
+
+.quick-item strong{
+
     display:block;
-    color:var(--gold);
-    font-size:13px;
-    font-weight:900;
-    letter-spacing:2.2px;
-    text-transform:uppercase;
-    margin-bottom:12px;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
 }
 
-.section-head h2{
-    font-size:clamp(32px,4vw,48px);
-    line-height:1.1;
-    margin-bottom:16px;
-}
 
-.section-head p{
+.quick-item span{
+
     color:var(--muted);
-    font-size:16px;
-    line-height:1.8;
+
+    font-size:12px;
+
 }
 
-/* SERVICES */
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section{
+
+    padding:82px 0;
+
+}
+
+
+.section-title{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:
+    0 auto 38px;
+
+}
+
+
+.section-title .label{
+
+    display:block;
+
+    color:var(--gold2);
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    font-weight:900;
+
+    margin-bottom:11px;
+
+}
+
+
+.section-title h2{
+
+    font-size:
+    clamp(
+        31px,
+        4vw,
+        47px
+    );
+
+    line-height:1.1;
+
+    margin-bottom:14px;
+
+}
+
+
+.section-title p{
+
+    color:var(--muted);
+
+    line-height:1.75;
+
+}
+
+
+
+/* =========================================================
+   DIENSTEN
+========================================================= */
 
 .services{
+
     background:
-        radial-gradient(circle at top right,rgba(244,180,0,.08),transparent 28%),
-        var(--black-2);
+    linear-gradient(
+        180deg,
+        var(--navy2),
+        #0a1022
+    );
+
 }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
 
-.service-card{
-    background:linear-gradient(180deg,#17171b,#101013);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:28px;
-    min-height:220px;
-    transition:.25s ease;
-    position:relative;
-    overflow:hidden;
-}
+.services-design{
 
-.service-card:before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
     width:100%;
-    height:4px;
-    background:linear-gradient(90deg,var(--orange),var(--gold-light));
-}
 
-.service-card:hover{
-    transform:translateY(-5px);
-    border-color:#4a3c10;
-}
-
-.service-icon{
-    width:52px;
-    height:52px;
-    display:grid;
-    place-items:center;
-    border-radius:12px;
-    background:rgba(244,180,0,.12);
-    border:1px solid rgba(244,180,0,.3);
-    color:var(--gold-light);
-    font-size:25px;
-    margin-bottom:20px;
-}
-
-.service-card h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.service-card p{
-    color:#bcbcc2;
-    font-size:14px;
-    line-height:1.7;
-}
-
-.services-photo{
-    margin-top:32px;
-    width:100%;
-    display:block;
     border-radius:18px;
-    border:1px solid #262626;
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
-}
 
-/* STATS */
-
-.stats-wrap{
-    margin-top:34px;
-    background:#08080a;
-    border:1px solid var(--line);
-    border-radius:16px;
     overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+    0 20px 55px
+    rgba(0,0,0,.35);
+
 }
+
+
+.services-design img{
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+
+/* =========================================================
+   STATS
+========================================================= */
 
 .stats{
+
+    margin-top:32px;
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    background:
+    linear-gradient(
+        135deg,
+        #0c1530,
+        #111b38
+    );
+
+    border:
+    1px solid var(--line);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
 }
+
 
 .stat{
-    padding:30px 15px;
+
+    padding:27px 15px;
+
     text-align:center;
-    border-right:1px solid var(--line);
+
+    border-right:
+    1px solid var(--line);
+
 }
+
 
 .stat:last-child{
+
     border-right:none;
+
 }
+
 
 .stat strong{
+
     display:block;
-    color:var(--gold-light);
-    font-size:33px;
+
+    font-size:29px;
+
+    color:var(--gold2);
+
     margin-bottom:7px;
+
 }
+
 
 .stat span{
-    color:#d2d2d5;
-    font-size:14px;
+
+    font-size:13px;
+
+    color:#d1d6e1;
+
 }
 
-/* VIDEO */
+
+
+/* =========================================================
+   VIDEO / MEDIA
+========================================================= */
 
 .media{
-    background:#060607;
+
+    background:
+    radial-gradient(
+        circle at center top,
+        rgba(70,52,132,.18),
+        transparent 34%
+    ),
+    var(--navy);
+
 }
+
 
 .media-grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:26px;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:25px;
+
 }
 
-.media-card{
+
+.video-card{
+
     position:relative;
-    overflow:hidden;
-    border-radius:18px;
+
     min-height:390px;
-    border:1px solid #26262c;
-    background:#111;
-}
 
-.media-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    position:absolute;
-    inset:0;
-}
+    overflow:hidden;
 
-.media-shade{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(0deg,rgba(0,0,0,.9),rgba(0,0,0,.12));
-}
-
-.media-content{
-    position:absolute;
-    left:26px;
-    right:26px;
-    bottom:26px;
-    z-index:2;
-}
-
-.play{
-    width:56px;
-    height:56px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:var(--gold-light);
-    color:#080808;
-    font-size:22px;
-    margin-bottom:16px;
-}
-
-.media-card h3{
-    font-size:24px;
-    margin-bottom:8px;
-}
-
-.media-card p{
-    color:#d5d5d8;
-    line-height:1.6;
-    font-size:14px;
-}
-
-/* ABOUT */
-
-.about{
-    background:
-        radial-gradient(circle at left center,rgba(244,180,0,.06),transparent 30%),
-        var(--black-3);
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:55px;
-    align-items:center;
-}
-
-.about h2{
-    font-size:clamp(34px,4vw,48px);
-    line-height:1.1;
-    margin:12px 0 20px;
-}
-
-.about p{
-    color:#bdbdc2;
-    line-height:1.8;
-    margin-bottom:16px;
-}
-
-.check-list{
-    list-style:none;
-    margin:25px 0 30px;
-}
-
-.check-list li{
-    position:relative;
-    padding-left:30px;
-    margin:13px 0;
-    color:#e1e1e3;
-}
-
-.check-list li:before{
-    content:"✓";
-    position:absolute;
-    left:0;
-    color:var(--gold-light);
-    font-weight:900;
-}
-
-.about-photo{
-    min-height:470px;
     border-radius:18px;
-    background-image:
-        linear-gradient(0deg,rgba(0,0,0,.15),rgba(0,0,0,.05)),
-        url("6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg");
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
-    border:1px solid #292929;
-    box-shadow:0 22px 50px rgba(0,0,0,.4);
+
+    border:
+    1px solid var(--line);
+
+    background:#0a1020;
+
+    box-shadow:
+    0 16px 40px
+    rgba(0,0,0,.25);
+
 }
 
-/* WHY */
 
-.why{
-    background:#08080a;
+.video-card img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
 }
 
-.why-grid{
+
+.video-card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        0deg,
+        rgba(4,7,17,.95),
+        rgba(4,7,17,.05) 68%
+    );
+
+}
+
+
+.video-content{
+
+    position:absolute;
+
+    z-index:2;
+
+    left:25px;
+
+    right:25px;
+
+    bottom:24px;
+
+}
+
+
+.play-button{
+
+    width:54px;
+
+    height:54px;
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
 
-.why-card{
-    padding:26px 22px;
-    border:1px solid var(--line);
-    border-radius:15px;
-    background:#121216;
-    text-align:center;
-}
-
-.why-number{
-    width:50px;
-    height:50px;
-    margin:0 auto 16px;
-    display:grid;
     place-items:center;
+
     border-radius:50%;
-    color:#0a0a0a;
-    background:var(--gold-light);
-    font-weight:900;
-    font-size:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--orange),
+        var(--gold2)
+    );
+
+    color:#101010;
+
+    font-size:20px;
+
+    margin-bottom:13px;
+
 }
 
-.why-card h3{
-    margin-bottom:9px;
-    font-size:18px;
+
+.video-content h3{
+
+    font-size:23px;
+
+    margin-bottom:7px;
+
 }
 
-.why-card p{
-    color:#b4b4ba;
+
+.video-content p{
+
+    color:#d2d6df;
+
     font-size:14px;
-    line-height:1.7;
+
 }
 
-/* CTA */
+
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
-    padding:70px 0;
+
     background:
-        linear-gradient(110deg,#e58f00 0%,#f5ba12 55%,#ffcf37 100%);
-    color:#090909;
+    linear-gradient(
+        105deg,
+        #e89221,
+        #f5b632,
+        #f9c448
+    );
+
+    color:#101010;
+
+    padding:59px 0;
+
 }
 
-.cta-box{
+
+.cta-inner{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:30px;
+
 }
 
-.cta h2{
-    font-size:clamp(30px,4vw,46px);
-    line-height:1.1;
-    margin-bottom:12px;
+
+.cta-text h2{
+
+    font-size:
+    clamp(
+        29px,
+        4vw,
+        43px
+    );
+
+    margin-bottom:10px;
+
 }
 
-.cta p{
-    max-width:720px;
-    line-height:1.7;
+
+.cta-text p{
+
+    max-width:650px;
+
+    line-height:1.65;
+
     font-weight:600;
+
 }
+
+
+.cta-points{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:17px;
+
+    margin-top:15px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+}
+
 
 .dark-btn{
+
     display:inline-flex;
-    align-items:center;
+
     justify-content:center;
-    padding:15px 22px;
-    border-radius:8px;
-    background:#080808;
+
+    align-items:center;
+
+    min-width:215px;
+
+    padding:15px 20px;
+
+    background:#091022;
+
     color:white;
+
+    border-radius:8px;
+
     font-weight:900;
-    white-space:nowrap;
+
 }
 
-/* JOBS */
+
+
+/* =========================================================
+   OVER ONS
+========================================================= */
+
+.about{
+
+    background:
+    linear-gradient(
+        180deg,
+        #0b1126,
+        #101834
+    );
+
+}
+
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    .95fr 1.05fr;
+
+    gap:54px;
+
+    align-items:center;
+
+}
+
+
+.about-label{
+
+    color:var(--gold2);
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    font-weight:900;
+
+    margin-bottom:12px;
+
+}
+
+
+.about h2{
+
+    font-size:
+    clamp(
+        34px,
+        4vw,
+        48px
+    );
+
+    margin-bottom:20px;
+
+}
+
+
+.about p{
+
+    color:#b7bfd0;
+
+    line-height:1.8;
+
+    margin-bottom:16px;
+
+}
+
+
+.check-list{
+
+    list-style:none;
+
+    margin:24px 0 28px;
+
+}
+
+
+.check-list li{
+
+    position:relative;
+
+    padding-left:29px;
+
+    margin-bottom:13px;
+
+    font-weight:600;
+
+    color:#e4e7ed;
+
+}
+
+
+.check-list li:before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:var(--gold2);
+
+    font-weight:900;
+
+}
+
+
+.gold-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--orange),
+        var(--gold2)
+    );
+
+    color:#111;
+
+    font-weight:900;
+
+    padding:14px 21px;
+
+    cursor:pointer;
+
+}
+
+
+.about-photo{
+
+    min-height:450px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:
+    1px solid var(--line);
+
+    box-shadow:
+    0 18px 50px
+    rgba(0,0,0,.30);
+
+}
+
+
+.about-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:450px;
+
+    object-fit:cover;
+
+}
+
+
+
+/* =========================================================
+   WAAROM KIEZEN
+========================================================= */
+
+.why{
+
+    background:#080e20;
+
+}
+
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+
+.why-card{
+
+    background:
+    linear-gradient(
+        180deg,
+        #152040,
+        #101933
+    );
+
+    border:
+    1px solid var(--line);
+
+    border-radius:15px;
+
+    padding:27px 20px;
+
+    text-align:center;
+
+}
+
+
+.why-icon{
+
+    width:49px;
+
+    height:49px;
+
+    margin:
+    0 auto 16px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--orange),
+        var(--gold2)
+    );
+
+    color:#111;
+
+    font-weight:900;
+
+}
+
+
+.why-card h3{
+
+    font-size:18px;
+
+    margin-bottom:9px;
+
+}
+
+
+.why-card p{
+
+    color:#aeb6c8;
+
+    line-height:1.65;
+
+    font-size:13px;
+
+}
+
+
+
+/* =========================================================
+   VACATURES
+========================================================= */
 
 .jobs{
-    background:#0d0d10;
+
+    background:
+    linear-gradient(
+        180deg,
+        #101733,
+        #0b1025
+    );
+
 }
+
 
 .job-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:19px;
+
 }
+
 
 .job-card{
-    background:#151519;
-    border:1px solid var(--line);
-    border-radius:16px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #182242,
+        #111a35
+    );
+
+    border:
+    1px solid var(--line);
+
+    border-radius:15px;
+
     padding:28px;
-    position:relative;
+
     overflow:hidden;
+
+    position:relative;
+
 }
+
 
 .job-card:before{
+
     content:"";
+
     position:absolute;
+
     left:0;
+
+    right:0;
+
     top:0;
+
     height:4px;
-    width:100%;
-    background:linear-gradient(90deg,var(--orange),var(--gold-light));
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--orange),
+        var(--gold2)
+    );
+
 }
+
 
 .job-icon{
-    width:54px;
-    height:54px;
+
+    width:51px;
+
+    height:51px;
+
     border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--orange),
+        var(--gold2)
+    );
+
     display:grid;
+
     place-items:center;
-    background:var(--gold-light);
-    color:#111;
-    font-size:25px;
-    margin-bottom:20px;
+
+    font-size:23px;
+
+    margin-bottom:19px;
+
 }
+
 
 .job-card h3{
-    font-size:21px;
-    margin-bottom:12px;
+
+    margin-bottom:11px;
+
+    font-size:20px;
+
 }
+
 
 .job-card p{
-    color:#b9b9bf;
+
+    color:#abb3c4;
+
     line-height:1.7;
+
     font-size:14px;
+
 }
+
 
 .job-card ul{
+
     list-style:none;
-    margin-top:17px;
+
+    margin-top:15px;
+
 }
+
 
 .job-card li{
+
     margin:9px 0;
-    color:#dedee1;
+
     font-size:14px;
+
+    color:#d8dce6;
+
 }
+
 
 .job-card li:before{
+
     content:"✓";
-    color:var(--gold-light);
+
+    color:var(--gold2);
+
     margin-right:8px;
+
     font-weight:bold;
+
 }
 
-/* APPLICATION */
+
+
+/* =========================================================
+   SOLLICITATIE
+========================================================= */
 
 .application{
+
     display:grid;
-    grid-template-columns:.9fr 1.1fr;
+
+    grid-template-columns:
+    .9fr 1.1fr;
+
     gap:38px;
-    margin-top:40px;
-    background:#08080a;
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:38px;
+
+    margin-top:38px;
+
+    background:
+    rgba(8,14,32,.75);
+
+    border:
+    1px solid var(--line);
+
+    border-radius:17px;
+
+    padding:36px;
+
 }
+
 
 .application-info h3{
-    font-size:30px;
-    margin:12px 0 15px;
+
+    font-size:29px;
+
+    margin:11px 0 15px;
+
 }
+
 
 .application-info p{
-    color:#b7b7bd;
+
+    color:#adb5c6;
+
     line-height:1.75;
+
 }
 
-.application-box{
-    background:#141418;
-    padding:25px;
-    border-radius:13px;
-    border:1px solid #25252a;
+
+.application-email{
+
+    color:var(--gold2);
+
+    font-weight:900;
+
 }
+
+
+.application-box,
+.quote-box{
+
+    background:
+    linear-gradient(
+        180deg,
+        #182342,
+        #111a33
+    );
+
+    border:
+    1px solid var(--line);
+
+    border-radius:14px;
+
+    padding:25px;
+
+}
+
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
 
 .field,
 .select-field,
 .text-field{
+
     width:100%;
-    background:#0a0a0c;
+
+    border:
+    1px solid
+    rgba(210,218,236,.32);
+
+    background:
+    rgba(7,13,31,.78);
+
     color:white;
-    border:1px solid #45454c;
+
     border-radius:8px;
+
     padding:14px;
+
     margin-bottom:11px;
+
+    font-size:14px;
+
     outline:none;
+
 }
+
+
+.field::placeholder,
+.text-field::placeholder{
+
+    color:#929caf;
+
+}
+
 
 .field:focus,
 .select-field:focus,
 .text-field:focus{
+
     border-color:var(--gold);
-    box-shadow:0 0 0 3px rgba(244,180,0,.08);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(242,170,40,.10);
+
 }
+
 
 .select-field option{
-    background:#111;
+
+    color:white;
+
+    background:#0b1228;
+
 }
+
 
 .text-field{
-    min-height:115px;
+
+    min-height:108px;
+
     resize:vertical;
+
 }
+
 
 .send-button{
+
     width:100%;
+
     border:none;
-    background:linear-gradient(135deg,var(--orange),var(--gold-light));
-    color:#111;
-    padding:15px;
+
     border-radius:8px;
+
+    padding:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--orange),
+        var(--gold2)
+    );
+
+    color:#111;
+
     font-weight:900;
+
     cursor:pointer;
+
 }
+
 
 .note{
-    color:#919197;
-    font-size:12px;
+
+    color:#8f98ab;
+
+    font-size:11px;
+
     line-height:1.6;
-    margin-top:12px;
+
+    margin-top:11px;
+
 }
 
-/* CONTACT */
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact{
-    background:#050506;
+
+    background:
+    radial-gradient(
+        circle at right center,
+        rgba(74,58,143,.18),
+        transparent 30%
+    ),
+    #080e20;
+
 }
+
 
 .contact-grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+    1fr 1fr;
+
     gap:55px;
+
     align-items:start;
+
 }
+
 
 .contact h2{
-    font-size:clamp(34px,4vw,46px);
-    margin:12px 0 20px;
+
+    font-size:
+    clamp(
+        34px,
+        4vw,
+        46px
+    );
+
+    margin:11px 0 19px;
+
 }
 
-.contact p{
-    color:#b9b9bf;
+
+.contact-intro{
+
+    color:#adb5c6;
+
     line-height:1.75;
+
+    max-width:530px;
+
 }
+
 
 .contact-item{
+
     margin-top:22px;
-    color:#ededf0;
-    font-size:17px;
+
 }
+
 
 .contact-item strong{
+
     display:block;
-    color:var(--gold-light);
-    font-size:13px;
-    text-transform:uppercase;
+
+    color:var(--gold2);
+
+    font-size:12px;
+
     letter-spacing:1px;
+
     margin-bottom:6px;
+
 }
 
-.quote-box{
-    background:#141418;
-    color:white;
-    padding:30px;
-    border-radius:16px;
-    border:1px solid var(--line);
+
+.contact-item a,
+.contact-item span{
+
+    font-size:17px;
+
+    color:#f0f2f6;
+
 }
+
 
 .quote-box h3{
-    color:var(--gold-light);
-    font-size:27px;
-    margin-bottom:20px;
+
+    color:var(--gold2);
+
+    font-size:26px;
+
+    margin-bottom:19px;
+
 }
 
-/* FOOTER */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-    background:#020203;
-    border-top:1px solid #1d1d20;
-    color:#9f9fa6;
-    padding:44px 15px;
+
+    background:#050916;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    padding:45px 0 25px;
+
 }
 
-.footer-inner{
-    width:min(1180px,calc(100% - 40px));
-    margin:auto;
+
+.footer-grid{
+
     display:grid;
-    grid-template-columns:1.2fr 1fr 1fr;
+
+    grid-template-columns:
+    1.25fr 1fr 1fr;
+
     gap:35px;
+
 }
+
 
 .footer-logo{
-    width:125px;
-    height:70px;
-    object-fit:contain;
-    margin-bottom:14px;
+
+    width:120px;
+
+    margin-bottom:12px;
+
 }
 
-.footer-inner h4{
+
+.footer-text{
+
+    color:#9da6b8;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+.footer-col h4{
+
     color:white;
-    margin-bottom:14px;
-}
 
-.footer-inner p,
-.footer-inner a{
-    line-height:1.9;
     font-size:14px;
+
+    margin-bottom:12px;
+
 }
 
-.footer-inner a:hover{
-    color:var(--gold-light);
+
+.footer-col p,
+.footer-col a{
+
+    color:#aab2c2;
+
+    font-size:13px;
+
+    line-height:1.9;
+
 }
+
+
+.footer-col a:hover{
+
+    color:var(--gold2);
+
+}
+
 
 .footer-bottom{
-    width:min(1180px,calc(100% - 40px));
-    margin:35px auto 0;
-    padding-top:22px;
-    border-top:1px solid #1d1d20;
+
+    margin-top:31px;
+
+    padding-top:21px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
     text-align:center;
-    font-size:13px;
+
+    color:#858fa2;
+
+    font-size:12px;
+
 }
+
 
 .footer-bottom strong{
-    color:var(--gold-light);
+
+    color:var(--gold2);
+
 }
 
-/* MOBILE */
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:1000px){
 
-    .menu{
+    .topbar{
+
         display:none;
+
     }
 
-    .service-grid{
-        grid-template-columns:repeat(2,1fr);
+
+    .menu{
+
+        display:none;
+
     }
 
-    .why-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
 
     .about-grid,
-    .contact-grid,
-    .application{
+    .application,
+    .contact-grid{
+
         grid-template-columns:1fr;
+
     }
+
+
+    .why-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
 
     .job-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .footer-inner{
-        grid-template-columns:1fr 1fr;
+
+    .footer-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+
     }
 
 }
 
-@media(max-width:760px){
 
-    .hero{
-        min-height:600px;
+@media(max-width:780px){
+
+    .hero-quick{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
     }
 
-    .hero-content{
-        padding:90px 0 65px;
+
+    .quick-item:nth-child(2){
+
+        border-right:none;
+
     }
 
-    .hero h1{
-        letter-spacing:-1px;
+
+    .quick-item:nth-child(1),
+    .quick-item:nth-child(2){
+
+        border-bottom:
+        1px solid var(--line);
+
     }
 
-    .media-grid{
-        grid-template-columns:1fr;
-    }
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+        repeat(2,1fr);
+
     }
+
 
     .stat:nth-child(2){
+
         border-right:none;
+
     }
 
-    .stat:nth-child(-n+2){
-        border-bottom:1px solid var(--line);
+
+    .stat:nth-child(1),
+    .stat:nth-child(2){
+
+        border-bottom:
+        1px solid var(--line);
+
     }
 
-    .cta-box{
+
+    .media-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .cta-inner{
+
         flex-direction:column;
+
         align-items:flex-start;
+
     }
 
 }
+
 
 @media(max-width:600px){
 
     .container{
-        width:min(100% - 28px,1180px);
+
+        width:
+        calc(100% - 28px);
+
     }
+
 
     .nav{
-        min-height:74px;
+
+        min-height:72px;
+
     }
+
 
     .logo{
-        width:98px;
-        height:56px;
+
+        width:100px;
+
+        height:55px;
+
     }
+
 
     .header-btn{
+
         padding:10px 12px;
+
         font-size:12px;
+
     }
 
-    .section-space{
-        padding:65px 0;
+
+    .section{
+
+        padding:60px 0;
+
     }
 
-    .service-grid,
-    .why-grid{
+
+    .hero{
+
+        padding-bottom:30px;
+
+    }
+
+
+    .hero-image{
+
+        min-height:300px;
+
+        object-fit:cover;
+
+        object-position:center;
+
+    }
+
+
+    .hero-quick{
+
         grid-template-columns:1fr;
+
     }
+
+
+    .quick-item{
+
+        border-right:none;
+
+        border-bottom:
+        1px solid var(--line);
+
+    }
+
+
+    .quick-item:last-child{
+
+        border-bottom:none;
+
+    }
+
 
     .stats{
+
         grid-template-columns:1fr;
+
     }
+
 
     .stat{
+
         border-right:none;
-        border-bottom:1px solid var(--line);
+
+        border-bottom:
+        1px solid var(--line);
+
     }
+
 
     .stat:last-child{
+
         border-bottom:none;
+
     }
+
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .video-card{
+
+        min-height:320px;
+
+    }
+
 
     .application{
-        padding:22px;
+
+        padding:20px;
+
     }
 
-    .about-photo{
-        min-height:330px;
+
+    .about-photo,
+    .about-photo img{
+
+        min-height:320px;
+
     }
 
-    .footer-inner{
+
+    .footer-grid{
+
         grid-template-columns:1fr;
+
     }
 
-}
-
-/* small floating accent */
-
-.corner-glow{
-    position:absolute;
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    background:rgba(244,180,0,.08);
-    filter:blur(80px);
-    pointer-events:none;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+
+<!-- =====================================================
+     TOPBAR
+===================================================== -->
+
+<div class="topbar">
+
+<div class="container topbar-inner">
+
+<div class="topbar-left">
+
+<span>
+<strong>24/7</strong>
+Bereikbaar
+</span>
+
+<span>
+Heel Nederland
+</span>
+
+</div>
+
+
+<div class="topbar-right">
+
+<span>
+Professioneel & Betrouwbaar
+</span>
+
+<span>
+Veiligheid staat voorop
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
+
 <div class="container nav">
 
 <img
@@ -990,62 +1982,140 @@ class="logo"
 src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
 alt="AS Traffic Control">
 
+
 <nav class="menu">
-<a href="#home">Home</a>
-<a href="#diensten">Diensten</a>
-<a href="#over-ons">Over ons</a>
-<a href="#vacatures">Vacatures</a>
-<a href="#contact">Contact</a>
+
+<a href="#home">
+Home
+</a>
+
+<a href="#diensten">
+Diensten
+</a>
+
+<a href="#over-ons">
+Over ons
+</a>
+
+<a href="#vacatures">
+Vacatures
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
 </nav>
 
-<a href="#contact" class="header-btn">
+
+<a
+href="#contact"
+class="header-btn">
+
 Offerte aanvragen →
+
 </a>
 
 </div>
+
 </header>
+
 
 
 <main>
 
-<!-- HERO -->
 
-<section class="hero" id="home">
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+class="hero"
+id="home">
+
+<div class="hero-frame">
 
 <img
-class="hero-bg"
+class="hero-image"
 src="9098305B-2116-4B08-8A35-5977165A84AB.jpeg"
-alt="AS Traffic Control verkeersregelaars">
+alt="AS Traffic Control">
 
-<div class="hero-overlay"></div>
-
-<div class="container hero-content">
-
-<div class="eyebrow">
-Veiligheid op de weg
 </div>
 
-<h1>
-Professionele
-<span>verkeersregelaars</span>
-voor ieder project
-</h1>
 
-<p>
-AS Traffic Control zorgt voor veilige, professionele en betrouwbare
-verkeersbegeleiding bij wegwerkzaamheden, projecten, evenementen
-en tijdelijke verkeerssituaties.
-</p>
+<div class="container hero-bottom">
 
-<div class="hero-actions">
+<div class="hero-quick">
 
-<a href="#contact" class="gold-btn">
-Offerte aanvragen →
-</a>
 
-<a href="#diensten" class="outline-btn">
-Bekijk onze diensten
-</a>
+<div class="quick-item">
+
+<div class="quick-icon">
+✓
+</div>
+
+<strong>
+Veiligheid voorop
+</strong>
+
+<span>
+Professionele uitvoering
+</span>
+
+</div>
+
+
+<div class="quick-item">
+
+<div class="quick-icon">
+24/7
+</div>
+
+<strong>
+Flexibel inzetbaar
+</strong>
+
+<span>
+Wanneer u ons nodig heeft
+</span>
+
+</div>
+
+
+<div class="quick-item">
+
+<div class="quick-icon">
+NL
+</div>
+
+<strong>
+Heel Nederland
+</strong>
+
+<span>
+Landelijke inzet
+</span>
+
+</div>
+
+
+<div class="quick-item">
+
+<div class="quick-icon">
+AS
+</div>
+
+<strong>
+Professioneel
+</strong>
+
+<span>
+Betrouwbaar georganiseerd
+</span>
+
+</div>
+
 
 </div>
 
@@ -1054,174 +2124,162 @@ Bekijk onze diensten
 </section>
 
 
-<!-- DIENSTEN -->
 
-<section class="services section-space" id="diensten">
+<!-- =====================================================
+     DIENSTEN
+===================================================== -->
 
-<div class="corner-glow" style="right:-80px;top:30px;"></div>
+<section
+class="services section"
+id="diensten">
 
 <div class="container">
 
-<div class="section-head">
+<div class="section-title">
 
-<span class="kicker">ONZE DIENSTEN</span>
+<span class="label">
+ONZE DIENSTEN
+</span>
 
 <h2>
 Professioneel verkeersmanagement
 </h2>
 
 <p>
-Voor veilige verkeerssituaties, betrouwbare inzet en een professionele
-uitvoering kunt u rekenen op AS Traffic Control.
+AS Traffic Control biedt professionele verkeersbegeleiding
+voor uiteenlopende projecten en verkeerssituaties.
 </p>
 
 </div>
 
 
-<div class="service-grid">
-
-<div class="service-card">
-<div class="service-icon">🚦</div>
-<h3>Verkeersregelaars</h3>
-<p>
-Professionele inzet van verkeersregelaars voor verschillende
-projecten, locaties en verkeerssituaties.
-</p>
-</div>
-
-
-<div class="service-card">
-<div class="service-icon">🚧</div>
-<h3>Wegwerkzaamheden</h3>
-<p>
-Veilige begeleiding van verkeer rondom werkzaamheden,
-afzettingen en tijdelijke omleidingen.
-</p>
-</div>
-
-
-<div class="service-card">
-<div class="service-icon">🏗️</div>
-<h3>Bouw & projecten</h3>
-<p>
-Verkeersbegeleiding rondom bouwlocaties,
-in- en uitritten en drukke projectomgevingen.
-</p>
-</div>
-
-
-<div class="service-card">
-<div class="service-icon">🎫</div>
-<h3>Evenementen</h3>
-<p>
-Veilige verkeersstromen voor bezoekers,
-leveranciers en hulpdiensten rondom evenementen.
-</p>
-</div>
-
-
-<div class="service-card">
-<div class="service-icon">🛣️</div>
-<h3>Tijdelijke verkeerssituaties</h3>
-<p>
-Flexibele ondersteuning bij onverwachte,
-tijdelijke of veranderende verkeerssituaties.
-</p>
-</div>
-
-
-<div class="service-card">
-<div class="service-icon">📞</div>
-<h3>Flexibele inzet</h3>
-<p>
-Heeft u snel ondersteuning nodig?
-Neem contact op voor beschikbaarheid en mogelijkheden.
-</p>
-</div>
-
-</div>
-
+<div class="services-design">
 
 <img
-class="services-photo"
 src="16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg"
 alt="Diensten AS Traffic Control">
 
+</div>
 
-<div class="stats-wrap">
+
 
 <div class="stats">
 
-<div class="stat">
-<strong>100%</strong>
-<span>Veiligheid voorop</span>
-</div>
 
 <div class="stat">
-<strong>24/7</strong>
-<span>Flexibel inzetbaar</span>
+
+<strong>
+100%
+</strong>
+
+<span>
+Veiligheid voorop
+</span>
+
 </div>
+
 
 <div class="stat">
-<strong>NL</strong>
-<span>Heel Nederland</span>
+
+<strong>
+24/7
+</strong>
+
+<span>
+Flexibel inzetbaar
+</span>
+
 </div>
+
 
 <div class="stat">
-<strong>AS</strong>
-<span>Professioneel & betrouwbaar</span>
+
+<strong>
+NL
+</strong>
+
+<span>
+Heel Nederland
+</span>
+
 </div>
+
+
+<div class="stat">
+
+<strong>
+AS
+</strong>
+
+<span>
+Professioneel & Betrouwbaar
+</span>
+
+</div>
+
 
 </div>
 
 </div>
 
-</div>
 </section>
 
 
-<!-- VIDEO / IMPRESSIE -->
 
-<section class="media section-space">
+<!-- =====================================================
+     VIDEO / MEDIA
+===================================================== -->
+
+<section class="media section">
 
 <div class="container">
 
-<div class="section-head">
+<div class="section-title">
 
-<span class="kicker">AS TRAFFIC CONTROL IN ACTIE</span>
+<span class="label">
+AS TRAFFIC CONTROL
+</span>
 
 <h2>
-Veiligheid zichtbaar in iedere situatie
+Veiligheid in beweging
 </h2>
 
 <p>
-Een professionele uitstraling, duidelijke communicatie
-en controle op iedere werkplek.
+Bekijk een impressie van AS Traffic Control
+en onze professionele werkwijze.
 </p>
 
 </div>
+
 
 
 <div class="media-grid">
 
-<div class="media-card">
+
+<div class="video-card">
 
 <img
 src="9098305B-2116-4B08-8A35-5977165A84AB.jpeg"
-alt="AS Traffic Control video">
+alt="Over AS Traffic Control">
 
-<div class="media-shade"></div>
 
-<div class="media-content">
+<div class="video-card-overlay">
+</div>
 
-<div class="play">▶</div>
+
+<div class="video-content">
+
+<div class="play-button">
+▶
+</div>
 
 <h3>
-Verkeersbegeleiding
+Over AS Traffic Control
 </h3>
 
 <p>
-Professioneel en veilig werken op en rondom de openbare weg.
+Professioneel en veilig werken
+op en rondom de openbare weg.
 </p>
 
 </div>
@@ -1229,57 +2287,91 @@ Professioneel en veilig werken op en rondom de openbare weg.
 </div>
 
 
-<div class="media-card">
+
+<div class="video-card">
 
 <img
-src="16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg"
-alt="AS Traffic Control">
+src="6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg"
+alt="Werken bij AS Traffic Control">
 
-<div class="media-shade"></div>
 
-<div class="media-content">
+<div class="video-card-overlay">
+</div>
 
-<div class="play">▶</div>
+
+<div class="video-content">
+
+<div class="play-button">
+▶
+</div>
 
 <h3>
-AS Traffic Control
+Werken bij AS Traffic Control
 </h3>
 
 <p>
-Veiligheid op de weg, altijd in beweging.
+Word onderdeel van een professioneel
+en betrouwbaar team.
 </p>
 
 </div>
 
 </div>
 
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- CTA -->
+
+<!-- =====================================================
+     CTA
+===================================================== -->
 
 <section class="cta">
 
-<div class="container cta-box">
+<div class="container cta-inner">
 
-<div>
+<div class="cta-text">
 
 <h2>
 Direct verkeersregelaars nodig?
 </h2>
 
 <p>
-Vertel ons wat u nodig heeft en ontvang vrijblijvend informatie
-over onze beschikbaarheid en mogelijkheden.
+Vraag vandaag nog vrijblijvend een offerte aan
+en vertel ons voor welk project u ondersteuning nodig heeft.
 </p>
+
+
+<div class="cta-points">
+
+<span>
+✓ Snelle reactie
+</span>
+
+<span>
+✓ Maatwerk
+</span>
+
+<span>
+✓ Duidelijke afspraken
+</span>
 
 </div>
 
-<a href="#contact" class="dark-btn">
-Offerte aanvragen →
+</div>
+
+
+<a
+href="#contact"
+class="dark-btn">
+
+Vraag direct een offerte aan →
+
 </a>
 
 </div>
@@ -1287,66 +2379,116 @@ Offerte aanvragen →
 </section>
 
 
-<!-- OVER ONS -->
 
-<section class="about section-space" id="over-ons">
+<!-- =====================================================
+     OVER ONS
+===================================================== -->
+
+<section
+class="about section"
+id="over-ons">
 
 <div class="container about-grid">
 
+
 <div>
 
-<span class="kicker">OVER ONS</span>
+<div class="about-label">
+OVER ONS
+</div>
+
 
 <h2>
 AS Traffic Control
 </h2>
 
+
 <p>
+
 Wij zijn een professioneel verkeersregelaarsbedrijf
 met als missie veiligheid op de weg te garanderen
 in iedere situatie.
+
 </p>
 
+
 <p>
-Met goed opgeleide medewerkers, duidelijke communicatie
-en strakke planning zorgen wij voor een veilige
+
+Met goed opgeleide medewerkers,
+duidelijke communicatie
+en een strakke planning
+zorgen wij voor een veilige
 en efficiënte verkeersdoorstroming.
+
 </p>
+
+
 
 <ul class="check-list">
 
-<li>Professioneel en betrouwbaar</li>
-<li>Goed opgeleide en gecertificeerde medewerkers</li>
-<li>Duidelijke communicatie en planning</li>
-<li>Flexibel inzetbaar</li>
-<li>Werkzaam door heel Nederland</li>
+<li>
+Professioneel en betrouwbaar
+</li>
+
+<li>
+Goed opgeleide en gecertificeerde medewerkers
+</li>
+
+<li>
+Duidelijke communicatie en planning
+</li>
+
+<li>
+Flexibel inzetbaar
+</li>
+
+<li>
+Werkzaam door heel Nederland
+</li>
 
 </ul>
 
-<a href="#contact" class="gold-btn">
+
+<a
+href="#contact"
+class="gold-btn">
+
 Neem contact op →
+
 </a>
 
 </div>
 
 
-<div class="about-photo"></div>
+
+<div class="about-photo">
+
+<img
+src="6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg"
+alt="AS Traffic Control">
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- WAAROM AS -->
 
-<section class="why section-space">
+<!-- =====================================================
+     WAAROM AS
+===================================================== -->
+
+<section class="why section">
 
 <div class="container">
 
-<div class="section-head">
 
-<span class="kicker">
-WAAROM AS TRAFFIC CONTROL?
+<div class="section-title">
+
+<span class="label">
+WAAROM KIEZEN VOOR AS TRAFFIC CONTROL?
 </span>
 
 <h2>
@@ -1354,65 +2496,106 @@ Betrouwbaarheid op iedere werkplek
 </h2>
 
 <p>
+
 Wij combineren professionele medewerkers,
-duidelijke communicatie en een gestructureerde werkwijze.
+duidelijke communicatie
+en een georganiseerde werkwijze.
+
 </p>
 
 </div>
+
 
 
 <div class="why-grid">
 
+
 <div class="why-card">
 
-<div class="why-number">01</div>
+<div class="why-icon">
+01
+</div>
 
-<h3>Professioneel</h3>
+<h3>
+Ervaren & gecertificeerd
+</h3>
 
 <p>
-Representatieve en professionele verkeersregelaars.
+
+Professionele verkeersregelaars
+met aandacht voor veiligheid
+en kwaliteit.
+
 </p>
 
 </div>
 
 
+
 <div class="why-card">
 
-<div class="why-number">02</div>
+<div class="why-icon">
+02
+</div>
 
-<h3>Betrouwbaar</h3>
+<h3>
+Betrouwbaar & flexibel
+</h3>
 
 <p>
-Heldere afspraken, duidelijke communicatie en betrouwbare inzet.
+
+Duidelijke afspraken
+en flexibele inzet
+voor uiteenlopende projecten.
+
 </p>
 
 </div>
 
 
+
 <div class="why-card">
 
-<div class="why-number">03</div>
+<div class="why-icon">
+03
+</div>
 
-<h3>Veiligheid</h3>
+<h3>
+Kwaliteit & veiligheid
+</h3>
 
 <p>
-Veiligheid staat centraal bij iedere opdracht en locatie.
+
+Veiligheid staat centraal
+bij iedere opdracht
+en op iedere locatie.
+
 </p>
 
 </div>
 
 
+
 <div class="why-card">
 
-<div class="why-number">04</div>
+<div class="why-icon">
+04
+</div>
 
-<h3>Flexibel</h3>
+<h3>
+Duidelijke communicatie
+</h3>
 
 <p>
-Flexibel inzetbaar voor uiteenlopende werkzaamheden en projecten.
+
+Heldere communicatie
+met opdrachtgever,
+medewerkers en locatie.
+
 </p>
 
 </div>
+
 
 </div>
 
@@ -1421,15 +2604,21 @@ Flexibel inzetbaar voor uiteenlopende werkzaamheden en projecten.
 </section>
 
 
-<!-- VACATURES -->
 
-<section class="jobs section-space" id="vacatures">
+<!-- =====================================================
+     VACATURES
+===================================================== -->
+
+<section
+class="jobs section"
+id="vacatures">
 
 <div class="container">
 
-<div class="section-head">
 
-<span class="kicker">
+<div class="section-title">
+
+<span class="label">
 WERKEN BIJ AS TRAFFIC CONTROL
 </span>
 
@@ -1438,107 +2627,196 @@ Samen zorgen we voor veiligheid op de weg
 </h2>
 
 <p>
-Ben jij verkeersregelaar of wil je worden opgeleid?
+
+Ben jij verkeersregelaar
+of wil je worden opgeleid?
+
 Laat jouw gegevens bij ons achter.
+
 </p>
 
 </div>
+
 
 
 <div class="job-grid">
 
+
 <div class="job-card">
 
-<div class="job-icon">🚦</div>
+<div class="job-icon">
+🚦
+</div>
 
-<h3>Verkeersregelaar</h3>
+<h3>
+Verkeersregelaar
+</h3>
 
 <p>
-Voor werkzaamheden, evenementen en verschillende verkeerssituaties.
+
+Voor werkzaamheden,
+evenementen
+en verschillende verkeerssituaties.
+
 </p>
 
 <ul>
-<li>Professionele werkhouding</li>
-<li>Flexibel inzetbaar</li>
-<li>Goede communicatie</li>
+
+<li>
+Professionele werkhouding
+</li>
+
+<li>
+Flexibel inzetbaar
+</li>
+
+<li>
+Goede communicatie
+</li>
+
 </ul>
 
 </div>
 
 
+
 <div class="job-card">
 
-<div class="job-icon">🎓</div>
+<div class="job-icon">
+🎓
+</div>
 
-<h3>Opleiding tot verkeersregelaar</h3>
+<h3>
+Opleiding tot verkeersregelaar
+</h3>
 
 <p>
-Heb je nog geen geldige verkeersregelaarsaanstelling?
+
+Heb je nog geen geldige
+verkeersregelaarsaanstelling?
+
 Laat jouw interesse achter.
+
 </p>
 
 <ul>
-<li>Motivatie en betrouwbaarheid</li>
-<li>Bereidheid om te leren</li>
-<li>Interesse in verkeersveiligheid</li>
+
+<li>
+Motivatie en betrouwbaarheid
+</li>
+
+<li>
+Bereidheid om te leren
+</li>
+
+<li>
+Interesse in verkeersveiligheid
+</li>
+
 </ul>
 
 </div>
+
 
 
 <div class="job-card">
 
-<div class="job-icon">🤝</div>
+<div class="job-icon">
+🤝
+</div>
 
-<h3>Open sollicitatie</h3>
+<h3>
+Open sollicitatie
+</h3>
 
 <p>
-Wil je graag bij AS Traffic Control werken?
+
+Wil je graag bij
+AS Traffic Control werken?
+
 Vertel ons wie je bent.
+
 </p>
 
 <ul>
-<li>Heel Nederland</li>
-<li>Verschillende projecten</li>
-<li>Professionele werkomgeving</li>
+
+<li>
+Heel Nederland
+</li>
+
+<li>
+Verschillende projecten
+</li>
+
+<li>
+Professionele werkomgeving
+</li>
+
 </ul>
 
 </div>
 
+
 </div>
 
+
+
+<!-- =====================================================
+     SOLLICITATIE FORMULIER
+===================================================== -->
 
 <div class="application">
 
+
 <div class="application-info">
 
-<span class="kicker">SOLLICITEREN</span>
+<div class="about-label">
+SOLLICITEREN
+</div>
+
 
 <h3>
 Interesse om bij ons te werken?
 </h3>
 
+
 <p>
+
 Vul jouw gegevens in.
-Wij nemen jouw sollicitatie zorgvuldig in behandeling.
+Wij nemen jouw sollicitatie
+zorgvuldig in behandeling.
+
 </p>
 
+
 <br>
+
 
 <p>
-Je kunt jouw CV ook rechtstreeks sturen naar:
+
+Je kunt jouw CV ook
+rechtstreeks sturen naar:
+
 </p>
+
 
 <br>
 
-<strong style="color:#ffc928">
+
+<a
+class="application-email"
+href="mailto:sollicitatie@astrafficcontrol.nl">
+
 sollicitatie@astrafficcontrol.nl
-</strong>
+
+</a>
 
 </div>
 
 
+
 <div class="application-box">
+
 
 <input
 id="jobName"
@@ -1546,17 +2824,20 @@ class="field"
 type="text"
 placeholder="Voor- en achternaam">
 
+
 <input
 id="jobEmail"
 class="field"
 type="email"
 placeholder="E-mailadres">
 
+
 <input
 id="jobPhone"
 class="field"
 type="tel"
 placeholder="Telefoonnummer">
+
 
 <input
 id="jobCity"
@@ -1565,45 +2846,84 @@ type="text"
 placeholder="Woonplaats">
 
 
-<select id="jobCertificate" class="select-field">
+
+<select
+id="jobCertificate"
+class="select-field">
 
 <option value="">
+
 Heb je een geldige verkeersregelaarsaanstelling?
+
 </option>
 
-<option value="Ja">Ja</option>
-<option value="Nee">Nee</option>
+
+<option value="Ja">
+
+Ja
+
+</option>
+
+
+<option value="Nee">
+
+Nee
+
+</option>
+
 
 <option value="Ik wil graag worden opgeleid">
+
 Ik wil graag worden opgeleid
+
 </option>
+
 
 </select>
 
 
-<select id="jobExperience" class="select-field">
+
+<select
+id="jobExperience"
+class="select-field">
 
 <option value="">
+
 Hoeveel ervaring heb je?
+
 </option>
+
 
 <option value="Nog geen ervaring">
+
 Nog geen ervaring
+
 </option>
+
 
 <option value="0-2 jaar">
+
 0–2 jaar
+
 </option>
+
 
 <option value="2-5 jaar">
+
 2–5 jaar
+
 </option>
+
 
 <option value="Meer dan 5 jaar">
+
 Meer dan 5 jaar
+
 </option>
 
+
 </select>
+
 
 
 <input
@@ -1613,10 +2933,12 @@ type="text"
 placeholder="Wanneer ben je beschikbaar?">
 
 
+
 <textarea
 id="jobMessage"
 class="text-field"
 placeholder="Vertel kort iets over jezelf en je ervaring"></textarea>
+
 
 
 <button
@@ -1629,9 +2951,14 @@ Sollicitatie versturen →
 </button>
 
 
+
 <div class="note">
-Uw gegevens worden rechtstreeks en beveiligd verzonden.
+
+Uw gegevens worden rechtstreeks
+naar AS Traffic Control verzonden.
+
 </div>
+
 
 </div>
 
@@ -1642,66 +2969,105 @@ Uw gegevens worden rechtstreeks en beveiligd verzonden.
 </section>
 
 
-<!-- CONTACT -->
 
-<section class="contact section-space" id="contact">
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+class="contact section"
+id="contact">
 
 <div class="container contact-grid">
 
+
+
 <div>
 
-<span class="kicker">
+
+<div class="about-label">
 CONTACT
-</span>
+</div>
+
 
 <h2>
 Neem contact met ons op
 </h2>
 
-<p>
+
+<p class="contact-intro">
+
 Heeft u professionele verkeersregelaars nodig?
-Neem vrijblijvend contact op met AS Traffic Control.
+
+Neem vrijblijvend contact op
+met AS Traffic Control.
+
 </p>
 
 
+
 <div class="contact-item">
 
-<strong>Telefoon</strong>
+<strong>
+TELEFOON
+</strong>
 
 <a href="tel:+31618259501">
+
 +31 6 18259501
+
 </a>
 
 </div>
 
 
+
 <div class="contact-item">
 
-<strong>E-mail</strong>
+<strong>
+E-MAIL
+</strong>
 
 <a href="mailto:info@astrafficcontrol.nl">
+
 info@astrafficcontrol.nl
+
 </a>
 
 </div>
 
 
+
 <div class="contact-item">
 
-<strong>Werkgebied</strong>
+<strong>
+WERKGEBIED
+</strong>
+
+<span>
 
 Heel Nederland
 
-</div>
+</span>
 
 </div>
 
+
+</div>
+
+
+
+<!-- =====================================================
+     OFFERTE FORMULIER
+===================================================== -->
 
 <div class="quote-box">
+
 
 <h3>
 Offerte aanvragen
 </h3>
+
 
 <input
 id="quoteName"
@@ -1709,11 +3075,13 @@ class="field"
 type="text"
 placeholder="Uw naam">
 
+
 <input
 id="quoteEmail"
 class="field"
 type="email"
 placeholder="E-mailadres">
+
 
 <input
 id="quotePhone"
@@ -1721,10 +3089,13 @@ class="field"
 type="tel"
 placeholder="Telefoonnummer">
 
+
+
 <textarea
 id="quoteMessage"
 class="text-field"
 placeholder="Vertel kort waarvoor u verkeersregelaars nodig heeft"></textarea>
+
 
 
 <button
@@ -1736,18 +3107,27 @@ Offerte aanvragen →
 
 </button>
 
+
 </div>
 
 </div>
 
 </section>
 
+
+
 </main>
 
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-<div class="footer-inner">
+<div class="container footer-grid">
+
 
 <div>
 
@@ -1756,219 +3136,477 @@ class="footer-logo"
 src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
 alt="AS Traffic Control">
 
-<p>
-Veiligheid op de weg, altijd in beweging.
+
+<p class="footer-text">
+
+Veiligheid op de weg,
+altijd in beweging.
+
 </p>
 
 </div>
 
 
-<div>
 
-<h4>Contact</h4>
+<div class="footer-col">
+
+<h4>
+Contact
+</h4>
+
 
 <p>
+
 <a href="tel:+31618259501">
+
 +31 6 18259501
+
 </a>
+
 </p>
+
 
 <p>
+
 <a href="mailto:info@astrafficcontrol.nl">
+
 info@astrafficcontrol.nl
+
 </a>
+
+</p>
+
+
+<p>
+
+Heel Nederland
+
 </p>
 
 </div>
 
 
-<div>
 
-<h4>Bedrijfsgegevens</h4>
+<div class="footer-col">
 
-<p>KVK: 42141533</p>
-<p>BTW-id: NL005529592B80</p>
+<h4>
+Bedrijfsgegevens
+</h4>
+
+
+<p>
+KVK: 42141533
+</p>
+
+
+<p>
+BTW-id: NL005529592B80
+</p>
 
 </div>
 
+
 </div>
 
 
-<div class="footer-bottom">
 
-© 2026 <strong>AS Traffic Control</strong>
+<div class="container footer-bottom">
+
+© 2026
+
+<strong>
+AS Traffic Control
+</strong>
+
 &nbsp; • &nbsp;
-Veiligheid op de weg, altijd in beweging.
+
+Veiligheid op de weg,
+altijd in beweging.
 
 </div>
 
 </footer>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
+
 function clean(value){
-    return value ? value.trim() : "";
+
+    return value
+        ? value.trim()
+        : "";
+
 }
 
 
+
+/* =====================================================
+   SOLLICITATIE
+===================================================== */
+
 function sendApplication(){
 
-    const name = clean(document.getElementById("jobName").value);
-    const email = clean(document.getElementById("jobEmail").value);
-    const phone = clean(document.getElementById("jobPhone").value);
-    const city = clean(document.getElementById("jobCity").value);
+
+    const name =
+        clean(
+            document
+            .getElementById("jobName")
+            .value
+        );
+
+
+    const email =
+        clean(
+            document
+            .getElementById("jobEmail")
+            .value
+        );
+
+
+    const phone =
+        clean(
+            document
+            .getElementById("jobPhone")
+            .value
+        );
+
+
+    const city =
+        clean(
+            document
+            .getElementById("jobCity")
+            .value
+        );
+
 
     const certificate =
-        document.getElementById("jobCertificate").value;
+        document
+        .getElementById("jobCertificate")
+        .value;
+
 
     const experience =
-        document.getElementById("jobExperience").value;
+        document
+        .getElementById("jobExperience")
+        .value;
+
 
     const availability =
-        clean(document.getElementById("jobAvailability").value);
+        clean(
+            document
+            .getElementById("jobAvailability")
+            .value
+        );
+
 
     const message =
-        clean(document.getElementById("jobMessage").value);
+        clean(
+            document
+            .getElementById("jobMessage")
+            .value
+        );
 
 
-    if(!name || !email || !phone){
+
+    if(
+        !name ||
+        !email ||
+        !phone
+    ){
 
         alert(
             "Vul minimaal uw naam, e-mailadres en telefoonnummer in."
         );
 
         return;
+
     }
 
 
-    fetch("https://formspree.io/f/xgawgqzv", {
 
-        method:"POST",
+    fetch(
+        "https://formspree.io/f/xgawgqzv",
+        {
 
-        headers:{
-            "Content-Type":"application/json",
-            "Accept":"application/json"
-        },
+            method:"POST",
 
-        body:JSON.stringify({
+            headers:{
 
-            name:name,
-            email:email,
-            phone:phone,
-            city:city,
-            certificate:certificate,
-            experience:experience,
-            availability:availability,
-            message:message
+                "Content-Type":
+                "application/json",
 
-        })
+                "Accept":
+                "application/json"
 
-    })
+            },
+
+
+            body:
+            JSON.stringify({
+
+                name:name,
+
+                email:email,
+
+                phone:phone,
+
+                city:city,
+
+                certificate:
+                certificate,
+
+                experience:
+                experience,
+
+                availability:
+                availability,
+
+                message:
+                message
+
+            })
+
+        }
+    )
+
 
     .then(response=>{
 
+
         if(response.ok){
+
 
             alert(
                 "Bedankt! Uw sollicitatie is succesvol verzonden."
             );
 
+
+            document
+            .getElementById("jobName")
+            .value="";
+
+
+            document
+            .getElementById("jobEmail")
+            .value="";
+
+
+            document
+            .getElementById("jobPhone")
+            .value="";
+
+
+            document
+            .getElementById("jobCity")
+            .value="";
+
+
+            document
+            .getElementById("jobCertificate")
+            .value="";
+
+
+            document
+            .getElementById("jobExperience")
+            .value="";
+
+
+            document
+            .getElementById("jobAvailability")
+            .value="";
+
+
+            document
+            .getElementById("jobMessage")
+            .value="";
+
+
         }else{
+
 
             alert(
                 "Er is iets misgegaan. Probeer het opnieuw."
             );
 
+
         }
+
 
     })
 
+
     .catch(()=>{
+
 
         alert(
             "Er is iets misgegaan. Probeer het opnieuw."
         );
 
+
     });
+
 
 }
 
 
+
+/* =====================================================
+   OFFERTE
+===================================================== */
+
 function sendQuote(){
 
+
     const name =
-        clean(document.getElementById("quoteName").value);
+        clean(
+            document
+            .getElementById("quoteName")
+            .value
+        );
+
 
     const email =
-        clean(document.getElementById("quoteEmail").value);
+        clean(
+            document
+            .getElementById("quoteEmail")
+            .value
+        );
+
 
     const phone =
-        clean(document.getElementById("quotePhone").value);
+        clean(
+            document
+            .getElementById("quotePhone")
+            .value
+        );
+
 
     const message =
-        clean(document.getElementById("quoteMessage").value);
+        clean(
+            document
+            .getElementById("quoteMessage")
+            .value
+        );
 
 
-    if(!name || !email){
+
+    if(
+        !name ||
+        !email
+    ){
 
         alert(
             "Vul minimaal uw naam en e-mailadres in."
         );
 
         return;
+
     }
 
 
-    fetch("https://formspree.io/f/xoeagbpq", {
 
-        method:"POST",
+    fetch(
+        "https://formspree.io/f/xoeagbpq",
+        {
 
-        headers:{
-            "Content-Type":"application/json",
-            "Accept":"application/json"
-        },
+            method:"POST",
 
-        body:JSON.stringify({
+            headers:{
 
-            name:name,
-            email:email,
-            phone:phone,
-            message:message
+                "Content-Type":
+                "application/json",
 
-        })
+                "Accept":
+                "application/json"
 
-    })
+            },
+
+
+            body:
+            JSON.stringify({
+
+                name:name,
+
+                email:email,
+
+                phone:phone,
+
+                message:message
+
+            })
+
+        }
+    )
+
 
     .then(response=>{
 
+
         if(response.ok){
+
 
             alert(
                 "Bedankt! Uw offerteaanvraag is succesvol verzonden."
             );
 
+
+            document
+            .getElementById("quoteName")
+            .value="";
+
+
+            document
+            .getElementById("quoteEmail")
+            .value="";
+
+
+            document
+            .getElementById("quotePhone")
+            .value="";
+
+
+            document
+            .getElementById("quoteMessage")
+            .value="";
+
+
         }else{
+
 
             alert(
                 "Er is iets misgegaan. Probeer het opnieuw."
             );
 
+
         }
+
 
     })
 
+
     .catch(()=>{
+
 
         alert(
             "Er is iets misgegaan. Probeer het opnieuw."
         );
 
+
     });
+
 
 }
 
+
 </script>
 
+
 </body>
+
 </html>
