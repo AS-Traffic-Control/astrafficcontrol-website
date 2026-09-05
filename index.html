@@ -1,1899 +1,884 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AS Traffic Control | Professionele Verkeersregelaars</title>
+<title>AS Traffic Control | Professionele verkeersbegeleiding</title>
 
-<meta name="description"
-content="AS Traffic Control levert professionele verkeersregelaars voor wegwerkzaamheden, evenementen, omleidingen, projecten en parkeerbeheer door heel Nederland.">
-
-<link rel="canonical" href="https://astrafficcontrol.nl/">
+<meta name="description" content="AS Traffic Control ondersteunt bedrijven, gemeenten, aannemers en organisatoren met professionele verkeersbegeleiding door heel Nederland.">
 
 <style>
-
-/* =========================================================
-   AS TRAFFIC CONTROL
-   NIEUWE WEBSITE - DONKER NAVY / ORANJE
-========================================================= */
-
 :root{
-    --bg:#07041a;
-    --bg2:#0c0624;
-    --bg3:#12082f;
-    --panel:#130a31;
-    --panel2:#190d3d;
-
-    --orange:#f47a13;
-    --orange2:#ff9828;
-    --orange3:#ffb347;
-
-    --white:#ffffff;
-    --soft:#eceaf4;
-    --muted:#beb8d0;
-
-    --line:rgba(255,255,255,.16);
-    --orange-line:rgba(244,122,19,.55);
+  --navy:#031827;
+  --navy2:#072943;
+  --orange:#f47721;
+  --white:#ffffff;
+  --muted:#cbd6df;
+  --card:#092b46;
+  --line:rgba(255,255,255,.12);
 }
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
-    scroll-padding-top:125px;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:var(--white);
-    background:
-        radial-gradient(circle at 50% 0%,#211044 0%,transparent 28%),
-        var(--bg);
-    overflow-x:hidden;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  line-height:1.6;
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
+  color:inherit;
+  text-decoration:none;
 }
 
 img{
-    max-width:100%;
-    display:block;
+  max-width:100%;
 }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
+.wrap{
+  width:min(1180px,92%);
+  margin:auto;
 }
-
-.container{
-    width:min(1200px,calc(100% - 44px));
-    margin:auto;
-}
-
-
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.top-bar{
-    background:#08031a;
-    border-bottom:1px solid rgba(255,255,255,.09);
-    font-size:12px;
-    color:#f3eff9;
-}
-
-.top-inner{
-    min-height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.top-left,
-.top-right{
-    display:flex;
-    align-items:center;
-    gap:26px;
-}
-
-.top-item{
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.top-icon{
-    color:var(--orange2);
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:rgba(8,3,27,.96);
-
-    border-bottom:1px solid rgba(255,255,255,.10);
-
-    backdrop-filter:blur(14px);
-}
-
-.nav{
-    min-height:96px;
-
-    display:grid;
-
-    grid-template-columns:
-    185px
-    1fr
-    auto;
-
-    align-items:center;
-
-    gap:30px;
-}
-
-.logo{
-    width:150px;
-    height:82px;
-    object-fit:contain;
-}
-
-.menu{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:37px;
-}
-
-.menu a{
-    position:relative;
-    color:#fff;
-    font-size:14px;
-    font-weight:600;
-    padding:14px 0;
-}
-
-.menu a::after{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:3px;
-
-    width:0;
-    height:2px;
-
-    background:var(--orange);
-
-    transition:.25s;
-}
-
-.menu a:hover{
-    color:var(--orange2);
-}
-
-.menu a:hover::after{
-    width:100%;
-}
-
-.header-quote,
-.orange-btn{
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:10px;
-
-    padding:15px 23px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ec6710,
-        #f68c16
-    );
-
-    color:white;
-
-    border:none;
-
-    border-radius:7px;
-
-    font-size:14px;
-    font-weight:800;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 8px 25px
-    rgba(238,103,16,.20);
-
-    transition:.25s;
-}
-
-.header-quote:hover,
-.orange-btn:hover{
-    transform:translateY(-2px);
-    filter:brightness(1.08);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    position:relative;
-
-    background:#09041b;
-
-    overflow:hidden;
-}
-
-.hero-image{
-    width:100%;
-
-    max-height:650px;
-
-    object-fit:cover;
-
-    object-position:center;
-}
-
-
-/*
-IMPORTANT:
-De gebruikte hero-afbeelding bevat al
-de AS Traffic Control tekst en visuele opmaak.
-Daarom voegen we hier GEEN extra tekst bovenop toe.
-Dit voorkomt dubbele tekst.
-*/
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
 
 .section{
-    padding:64px 0;
+  padding:75px 0;
 }
 
 .title{
-    text-align:center;
-    margin-bottom:30px;
+  color:var(--orange);
+  font-size:clamp(30px,4vw,48px);
+  margin:0 0 15px;
+  font-weight:900;
 }
 
-.title h2{
-    font-size:32px;
-    line-height:1.15;
+.lead{
+  color:var(--muted);
+  max-width:820px;
+  font-size:17px;
 }
 
-.title-label{
-    color:var(--orange2);
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    font-size:12px;
-    font-weight:800;
-
-    margin-bottom:9px;
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:8px;
+  font-weight:800;
 }
 
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services{
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(77,33,142,.24),
-            transparent 38%
-        ),
-        #09041d;
+.primary{
+  background:var(--orange);
+  color:white;
 }
 
-.services-title{
-    text-align:center;
-    margin-bottom:28px;
+.outline{
+  border:2px solid white;
 }
 
-.services-title h2{
-    font-size:31px;
+/* HEADER */
+
+.top{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(3,24,39,.96);
+  border-bottom:1px solid var(--line);
 }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:15px;
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
 
-.service-card{
-    background:
-        linear-gradient(
-            180deg,
-            #1c0c43 0%,
-            #11082d 100%
-        );
-
-    border:1px solid rgba(255,255,255,.20);
-
-    border-radius:13px;
-
-    overflow:hidden;
-
-    min-width:0;
-
-    transition:.25s;
-
-    box-shadow:
-    0 10px 30px
-    rgba(0,0,0,.20);
+.nav img{
+  width:120px;
+  height:65px;
+  object-fit:contain;
 }
 
-.service-card:hover{
-    transform:translateY(-5px);
-    border-color:var(--orange);
+.links{
+  margin-left:auto;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-weight:700;
+  font-size:14px;
 }
 
-.service-photo{
-    height:205px;
-    background-image:
-    url("16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg");
+/* HERO */
 
-    background-repeat:no-repeat;
+.hero{
+  min-height:690px;
+  display:flex;
+  align-items:center;
 
-    position:relative;
+  background:
+  linear-gradient(
+    90deg,
+    rgba(2,22,36,.98) 0%,
+    rgba(2,22,36,.90) 43%,
+    rgba(2,22,36,.35) 78%
+  ),
+  url("9098305B-2116-4B08-8A35-5977165A84AB.jpeg");
+
+  background-size:cover;
+  background-position:center;
 }
 
-.service-photo::after{
-    content:"";
-
-    position:absolute;
-
-    inset:55% 0 0;
-
-    background:
-    linear-gradient(
-        transparent,
-        #160a36
-    );
+.hero-content{
+  max-width:720px;
+  padding:80px 0;
 }
 
-
-/*
-De bestaande dienstenafbeelding bevat 5 kolommen.
-Hier gebruiken we afzonderlijke uitsneden daarvan.
-*/
-
-.service-1{
-    background-size:500% auto;
-    background-position:0% 8%;
+.hero-logo{
+  width:260px;
+  margin-bottom:25px;
 }
 
-.service-2{
-    background-size:500% auto;
-    background-position:25% 8%;
+.hero h1{
+  font-size:clamp(42px,6vw,72px);
+  line-height:1.04;
+  margin:0 0 20px;
 }
 
-.service-3{
-    background-size:500% auto;
-    background-position:50% 8%;
+.hero h1 span{
+  color:var(--orange);
 }
 
-.service-4{
-    background-size:500% auto;
-    background-position:75% 8%;
+.hero p{
+  font-size:18px;
+  color:#eef3f7;
 }
 
-.service-5{
-    background-size:500% auto;
-    background-position:100% 8%;
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
 }
 
-.service-icon{
-    width:58px;
-    height:58px;
-
-    margin:-31px auto 10px;
-
-    position:relative;
-    z-index:3;
-
-    border-radius:50%;
-
-    display:grid;
-    place-items:center;
-
-    background:#100629;
-
-    border:2px solid var(--orange);
-
-    color:var(--orange2);
-
-    font-size:25px;
-}
-
-.service-content{
-    padding:0 17px 22px;
-    text-align:center;
-}
-
-.service-card h3{
-    font-size:17px;
-    line-height:1.25;
-
-    min-height:44px;
-
-    margin-bottom:10px;
-}
-
-.service-card p{
-    color:#e0dae9;
-
-    font-size:12px;
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   USP / STATS
-========================================================= */
-
-.usp-wrap{
-    margin-top:26px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #180a3b,
-            #10062b
-        );
-
-    border:1px solid rgba(255,255,255,.17);
-
-    border-radius:13px;
-
-    overflow:hidden;
-}
-
-.usp-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.usp{
-    padding:23px 23px;
-
-    display:grid;
-
-    grid-template-columns:55px 1fr;
-
-    gap:14px;
-
-    align-items:center;
-
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.usp:last-child{
-    border-right:none;
-}
-
-.usp-icon{
-    font-size:34px;
-    color:var(--orange2);
-    text-align:center;
-}
-
-.usp strong{
-    display:block;
-
-    color:var(--orange2);
-
-    font-size:23px;
-
-    margin-bottom:5px;
-}
-
-.usp h4{
-    font-size:13px;
-    margin-bottom:6px;
-}
-
-.usp p{
-    color:#cbc5d8;
-    font-size:11px;
-    line-height:1.5;
-}
-
-
-/* =========================================================
-   VIDEOS
-========================================================= */
-
-.videos{
-    background:#08031a;
-    padding:0 0 26px;
-}
-
-.video-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.video-card{
-    background:
-        linear-gradient(
-            145deg,
-            #190b3c,
-            #10072a
-        );
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:13px;
-
-    padding:20px;
-
-    display:grid;
-
-    grid-template-columns:
-    .85fr 1.15fr;
-
-    gap:18px;
-
-    align-items:center;
-}
-
-.video-copy h3{
-    color:var(--orange2);
-    font-size:21px;
-    margin-bottom:5px;
-}
-
-.video-copy .small{
-    color:white;
-    margin-bottom:13px;
-}
-
-.video-copy p{
-    font-size:12px;
-    line-height:1.7;
-    color:#e0dae8;
-}
-
-.video-preview{
-    position:relative;
-
-    height:195px;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    background:#090416;
-}
-
-.video-preview img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.video-preview::after{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-        linear-gradient(
-            0deg,
-            rgba(7,3,22,.45),
-            transparent
-        );
-}
-
-.play-btn{
-    position:absolute;
-
-    z-index:5;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:61px;
-    height:61px;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:50%;
-
-    border:3px solid white;
-
-    background:rgba(0,0,0,.32);
-
-    color:white;
-
-    font-size:25px;
-
-    cursor:pointer;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta-section{
-    padding:0 0 28px;
-    background:#08031a;
-}
-
-.cta-box{
-    position:relative;
-
-    min-height:145px;
-
-    overflow:hidden;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    gap:30px;
-
-    padding:28px 38px;
-
-    border-radius:13px;
-
-    border:1px solid rgba(255,255,255,.18);
-
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(13,5,36,.97) 0%,
-            rgba(20,8,47,.85) 48%,
-            rgba(18,6,39,.58) 100%
-        ),
-        url("9098305B-2116-4B08-8A35-5977165A84AB.jpeg");
-
-    background-size:cover;
-
-    background-position:center;
-}
-
-.cta-copy{
-    position:relative;
-    z-index:2;
-}
-
-.cta-copy h2{
-    font-size:25px;
-    margin-bottom:7px;
-}
-
-.cta-copy > p{
-    margin-bottom:18px;
-    color:#eeeaf4;
-}
-
-.cta-benefits{
-    display:flex;
-    flex-wrap:wrap;
-    gap:24px;
-
-    font-size:12px;
-}
-
-.cta-benefits span::before{
-    content:"✓";
-    color:var(--orange2);
-
-    margin-right:7px;
-
-    font-weight:bold;
-}
-
-.cta-box .orange-btn{
-    position:relative;
-    z-index:2;
-
-    min-width:270px;
-}
-
-
-/* =========================================================
-   WHY AS
-========================================================= */
-
-.why{
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(63,27,124,.22),
-            transparent 45%
-        ),
-        #08031a;
-}
-
-.why-title{
-    text-align:center;
-    margin-bottom:27px;
-}
-
-.why-title h2{
-    font-size:28px;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.why-card{
-    text-align:center;
-
-    padding:0 30px;
-
-    border-right:1px solid rgba(255,255,255,.13);
-}
-
-.why-card:last-child{
-    border-right:none;
-}
-
-.why-icon{
-    height:62px;
-
-    display:grid;
-    place-items:center;
-
-    color:var(--orange2);
-
-    font-size:37px;
-
-    margin-bottom:10px;
-}
-
-.why-card h3{
-    color:var(--orange2);
-
-    font-size:15px;
-
-    margin-bottom:10px;
-}
-
-.why-card p{
-    color:#e1dce8;
-
-    font-size:12px;
-
-    line-height:1.65;
-}
-
-
-/* =========================================================
-   OVER ONS
-========================================================= */
+/* ABOUT */
 
 .about{
-    background:
-        linear-gradient(
-            180deg,
-            #0c0525,
-            #10072e
-        );
+  background:linear-gradient(135deg,#082d49,#031827);
 }
 
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:45px;
-    align-items:center;
+.two{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:38px;
+  align-items:center;
 }
 
-.orange-label{
-    color:var(--orange2);
-
-    font-size:12px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    margin-bottom:10px;
+.box{
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  padding:28px;
+  border-radius:16px;
 }
 
-.about h2{
-    font-size:38px;
-    margin-bottom:17px;
+.checks{
+  display:grid;
+  gap:15px;
 }
 
-.about p{
-    color:#c7c0d3;
-
-    line-height:1.75;
-
-    font-size:14px;
-
-    margin-bottom:14px;
+.checks div::before{
+  content:"✓";
+  display:inline-grid;
+  place-items:center;
+  background:var(--orange);
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  margin-right:10px;
+  font-weight:bold;
 }
 
-.check-list{
-    list-style:none;
-
-    margin:22px 0 27px;
+.country{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:1fr .75fr;
+  gap:30px;
+  align-items:center;
 }
 
-.check-list li{
-    position:relative;
-
-    padding-left:28px;
-
-    margin-bottom:12px;
-
-    font-size:14px;
+.map{
+  min-height:260px;
+  border-radius:18px;
+  background:#061d31;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
 }
 
-.check-list li::before{
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    color:var(--orange2);
-
-    font-weight:bold;
+.nl{
+  font-size:150px;
 }
 
-.about-image{
-    height:410px;
+/* VIDEOS */
 
-    border-radius:13px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.15);
+.videos{
+  background:#02131f;
 }
 
-.about-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
+.video{
+  height:320px;
+  border-radius:17px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid var(--line);
+  background:
+  linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.15)),
+  url("16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg");
 
-/* =========================================================
-   VACATURES
-========================================================= */
-
-.jobs{
-    background:#09041e;
+  background-size:cover;
+  background-position:center;
 }
 
-.job-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.video .caption{
+  position:absolute;
+  bottom:22px;
+  left:22px;
 }
 
-.job-card{
-    background:
-        linear-gradient(
-            180deg,
-            #1a0d3d,
-            #11072c
-        );
-
-    border:1px solid rgba(255,255,255,.17);
-
-    border-radius:13px;
-
-    padding:25px;
-
-    border-top:3px solid var(--orange);
+.video h3{
+  color:var(--orange);
+  margin:0;
+  font-size:24px;
 }
 
-.job-circle{
-    width:50px;
-    height:50px;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:50%;
-
-    background:var(--orange);
-
-    margin-bottom:17px;
-
-    font-size:22px;
+.play{
+  position:absolute;
+  left:50%;
+  top:45%;
+  transform:translate(-50%,-50%);
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:var(--orange);
+  display:grid;
+  place-items:center;
+  font-size:30px;
+  border:3px solid white;
 }
 
-.job-card h3{
-    margin-bottom:10px;
-    font-size:19px;
+/* WORK IMAGES */
+
+.work{
+  background:#06243a;
 }
 
-.job-card p{
-    color:#c8c1d4;
-
-    font-size:13px;
-
-    line-height:1.65;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
 }
 
-.job-card ul{
-    list-style:none;
-    margin-top:14px;
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:17px;
+  overflow:hidden;
 }
 
-.job-card li{
-    margin:8px 0;
-
-    color:#e5e0ec;
-
-    font-size:12px;
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
 }
 
-.job-card li::before{
-    content:"✓";
-    color:var(--orange2);
-    margin-right:7px;
+.card-content{
+  padding:22px;
 }
 
-
-/* =========================================================
-   FORMS
-========================================================= */
-
-.form-layout{
-    margin-top:25px;
-
-    display:grid;
-    grid-template-columns:.85fr 1.15fr;
-
-    gap:30px;
-
-    padding:28px;
-
-    border-radius:14px;
-
-    background:#10072b;
-
-    border:1px solid rgba(255,255,255,.15);
+.card h3{
+  color:var(--orange);
+  font-size:24px;
+  margin:0 0 8px;
 }
 
-.form-info h3{
-    font-size:27px;
+/* SERVICES */
 
-    margin:10px 0 13px;
+.services-info{
+  background:#031827;
 }
 
-.form-info p{
-    color:#beb7cc;
-
-    line-height:1.75;
-
-    font-size:13px;
+.service-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:30px;
 }
 
-.form-info strong{
-    color:var(--orange2);
+.service-item{
+  padding:25px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(255,255,255,.04);
 }
 
-.form-box{
-    padding:22px;
-
-    background:#160b38;
-
-    border-radius:12px;
-
-    border:1px solid rgba(255,255,255,.12);
+.service-item h3{
+  color:var(--orange);
 }
 
-.field,
-.select-field,
-.text-field{
-    display:block;
+/* FORMS */
 
-    width:100%;
-
-    background:#0c0624;
-
-    border:1px solid rgba(255,255,255,.26);
-
-    color:white;
-
-    border-radius:7px;
-
-    padding:13px 14px;
-
-    margin-bottom:10px;
-
-    outline:none;
-
-    font-size:13px;
+.forms{
+  background:#061d30;
 }
 
-.field:focus,
-.select-field:focus,
-.text-field:focus{
-    border-color:var(--orange2);
-
-    box-shadow:
-    0 0 0 3px
-    rgba(244,122,19,.12);
+.formgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:start;
 }
 
-.field::placeholder,
-.text-field::placeholder{
-    color:#9b94aa;
+.formcard{
+  background:white;
+  color:#17212b;
+  border-radius:17px;
+  overflow:hidden;
 }
 
-.select-field option{
-    background:#0b0521;
-    color:white;
+.formhead{
+  background:#082b47;
+  color:white;
+  padding:25px;
 }
 
-.text-field{
-    resize:vertical;
-    min-height:105px;
+.formhead h2{
+  color:var(--orange);
+  margin:0;
 }
 
-.send-button{
-    width:100%;
-
-    border:none;
-
-    border-radius:7px;
-
-    padding:14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ec6710,
-            #f68c16
-        );
-
-    color:white;
-
-    cursor:pointer;
-
-    font-weight:800;
+.formbody{
+  padding:25px;
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-    background:#0c0525;
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
 }
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:50px;
-
-    align-items:start;
+.field{
+  margin-bottom:14px;
 }
 
-.contact h2{
-    font-size:37px;
-    margin:10px 0 17px;
+.field label{
+  font-weight:700;
+  font-size:13px;
+  display:block;
+  margin-bottom:5px;
 }
 
-.contact-intro{
-    color:#c2bbce;
-
-    font-size:14px;
-
-    line-height:1.75;
-
-    margin-bottom:22px;
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:11px;
+  border:1px solid #c7d1da;
+  border-radius:7px;
+  font:inherit;
 }
 
-.contact-item{
-    margin-bottom:19px;
+.field textarea{
+  min-height:110px;
 }
 
-.contact-item strong{
-    display:block;
-
-    color:var(--orange2);
-
-    font-size:11px;
-
-    margin-bottom:5px;
-
-    letter-spacing:1px;
+.submit{
+  width:100%;
+  border:0;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
 }
 
-.contact-item a,
-.contact-item span{
-    color:white;
-    font-size:15px;
-}
-
-.quote-box{
-    background:#140a35;
-
-    border:1px solid rgba(255,255,255,.16);
-
-    border-radius:13px;
-
-    padding:25px;
-}
-
-.quote-box h3{
-    color:var(--orange2);
-
-    font-size:25px;
-
-    margin-bottom:18px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer{
-    background:#050216;
-
-    border-top:1px solid rgba(255,255,255,.10);
-
-    padding:40px 0 22px;
+  background:#010f19;
+  border-top:1px solid var(--line);
+  padding:50px 0 20px;
 }
 
 .footer-grid{
-    display:grid;
-    grid-template-columns:1.2fr 1fr 1fr;
-    gap:30px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:30px;
 }
 
-.footer-logo{
-    width:130px;
-    margin-bottom:13px;
+.footer-grid img{
+  width:190px;
 }
 
 .footer-grid h4{
-    margin-bottom:12px;
+  color:var(--orange);
+  font-size:18px;
 }
 
-.footer-grid p,
-.footer-grid a{
-    color:#aca5bb;
-
-    font-size:12px;
-
-    line-height:1.8;
+.copy{
+  text-align:center;
+  color:#8fa0ad;
+  border-top:1px solid var(--line);
+  margin-top:30px;
+  padding-top:18px;
+  font-size:12px;
 }
 
-.footer-bottom{
-    margin-top:27px;
+/* MOBILE */
 
-    padding-top:18px;
+@media(max-width:800px){
 
-    border-top:1px solid rgba(255,255,255,.09);
-
-    text-align:center;
-
-    color:#888096;
-
-    font-size:11px;
-}
-
-.footer-bottom strong{
-    color:var(--orange2);
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-menu-btn{
+  .links{
     display:none;
-
-    width:43px;
-    height:43px;
-
-    border:1px solid rgba(255,255,255,.20);
-
-    border-radius:7px;
-
-    background:#13082d;
-
-    color:white;
-
-    font-size:22px;
-
-    cursor:pointer;
-}
-
-.mobile-menu{
-    display:none;
-
-    padding:0 22px 18px;
-
-    background:#09031f;
-}
-
-.mobile-menu.open{
-    display:block;
-}
-
-.mobile-menu a{
-    display:block;
-
-    padding:13px 0;
-
-    border-bottom:1px solid rgba(255,255,255,.09);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1100px){
-
-    .service-grid{
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-
-    .service-card:nth-child(4),
-    .service-card:nth-child(5){
-        grid-column:auto;
-    }
-
-}
-
-
-@media(max-width:900px){
-
-    .top-bar{
-        display:none;
-    }
-
-    .nav{
-        min-height:78px;
-
-        grid-template-columns:
-        1fr auto auto;
-    }
-
-    .logo{
-        width:115px;
-        height:62px;
-    }
-
-    .menu{
-        display:none;
-    }
-
-    .mobile-menu-btn{
-        display:block;
-    }
-
-    .header-quote{
-        padding:11px 14px;
-        font-size:12px;
-    }
-
-    .service-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .usp-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .usp:nth-child(2){
-        border-right:none;
-    }
-
-    .usp:nth-child(1),
-    .usp:nth-child(2){
-        border-bottom:
-        1px solid rgba(255,255,255,.15);
-    }
-
-    .video-grid,
-    .about-grid,
-    .form-layout,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .why-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .why-card{
-        border-right:none;
-
-        padding:20px;
-    }
-
-    .job-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:
-        1fr 1fr;
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .container{
-        width:
-        calc(100% - 28px);
-    }
-
-    .header-quote{
-        display:none;
-    }
-
-    .hero-image{
-        min-height:280px;
-
-        object-fit:cover;
-
-        object-position:center;
-    }
-
-    .section{
-        padding:48px 0;
-    }
-
-    .service-grid{
-        grid-template-columns:1fr;
-    }
-
-    .service-photo{
-        height:225px;
-    }
-
-    .usp-grid{
-        grid-template-columns:1fr;
-    }
-
-    .usp{
-        border-right:none;
-        border-bottom:
-        1px solid rgba(255,255,255,.15);
-    }
-
-    .usp:last-child{
-        border-bottom:none;
-    }
-
-    .video-card{
-        grid-template-columns:1fr;
-    }
-
-    .video-preview{
-        height:200px;
-    }
-
-    .cta-box{
-        padding:25px;
-
-        flex-direction:column;
-
-        align-items:flex-start;
-    }
-
-    .cta-box .orange-btn{
-        min-width:0;
-        width:100%;
-    }
-
-    .why-grid{
-        grid-template-columns:1fr;
-    }
-
-    .why-card{
-        border-bottom:
-        1px solid rgba(255,255,255,.11);
-    }
-
-    .why-card:last-child{
-        border-bottom:none;
-    }
-
-    .about h2,
-    .contact h2{
-        font-size:30px;
-    }
-
-    .form-layout{
-        padding:18px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
+  }
+
+  .two,
+  .country,
+  .grid2,
+  .cards,
+  .service-list,
+  .formgrid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .row{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .card img{
+    height:240px;
+  }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<header class="top">
+  <div class="wrap nav">
 
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
+    <img
+      src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
+      alt="AS Traffic Control"
+    >
 
-<div class="top-bar">
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#over">Over ons</a>
+      <a href="#videos">Video's</a>
+      <a href="#werk">Diensten</a>
+      <a href="#werken">Werken bij ons</a>
+      <a href="#offerte" class="btn primary">Offerte aanvragen</a>
+    </nav>
 
-<div class="container top-inner">
-
-<div class="top-left">
-
-<div class="top-item">
-<span class="top-icon">●</span>
-<span>24/7 Bereikbaar</span>
-</div>
-
-<div class="top-item">
-<span class="top-icon">⌖</span>
-<span>Heel Nederland</span>
-</div>
-
-</div>
-
-
-<div class="top-right">
-
-<div class="top-item">
-<span class="top-icon">♧</span>
-<span>Professioneel &amp; Betrouwbaar</span>
-</div>
-
-<div class="top-item">
-<span class="top-icon">◇</span>
-<span>Veiligheid staat voorop</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header>
-
-<div class="container nav">
-
-<a href="#home">
-
-<img
-class="logo"
-src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
-alt="AS Traffic Control">
-
-</a>
-
-
-<nav class="menu">
-
-<a href="#home">Home</a>
-
-<a href="#diensten">Diensten</a>
-
-<a href="#over-ons">Over ons</a>
-
-<a href="#vacatures">Vacatures</a>
-
-<a href="#contact">Contact</a>
-
-</nav>
-
-
-<a
-href="#offerte"
-class="header-quote">
-
-Offerte aanvragen
-<span>→</span>
-
-</a>
-
-
-<button
-class="mobile-menu-btn"
-type="button"
-onclick="toggleMenu()"
-aria-label="Menu">
-
-☰
-
-</button>
-
-</div>
-
-
-<div
-class="mobile-menu"
-id="mobileMenu">
-
-<a
-href="#home"
-onclick="closeMenu()">
-Home
-</a>
-
-<a
-href="#diensten"
-onclick="closeMenu()">
-Diensten
-</a>
-
-<a
-href="#over-ons"
-onclick="closeMenu()">
-Over ons
-</a>
-
-<a
-href="#vacatures"
-onclick="closeMenu()">
-Vacatures
-</a>
-
-<a
-href="#contact"
-onclick="closeMenu()">
-Contact
-</a>
-
-<a
-href="#offerte"
-onclick="closeMenu()"
-style="color:#ff9828;font-weight:bold;">
-Offerte aanvragen →
-</a>
-
-</div>
-
+  </div>
 </header>
 
 
-<main>
+<!-- HERO -->
 
+<section class="hero" id="home">
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+  <div class="wrap">
 
-<section
-class="hero"
-id="home">
+    <div class="hero-content">
 
-<img
-class="hero-image"
-src="9098305B-2116-4B08-8A35-5977165A84AB.jpeg"
-alt="AS Traffic Control verkeersregelaar">
+      <img
+        class="hero-logo"
+        src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
+        alt="AS Traffic Control"
+      >
+
+      <h1>
+        Veilig verkeer begint met
+        <span>professionele begeleiding.</span>
+      </h1>
+
+      <p>
+        AS Traffic Control ondersteunt bedrijven, gemeenten,
+        aannemers en organisatoren met professionele verkeersregelaars
+        en betrouwbare verkeersbegeleiding.
+        Van wegwerkzaamheden en omleidingen tot evenementen en
+        tijdelijke verkeerssituaties — wij staan klaar voor opdrachten
+        door heel Nederland.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#offerte">
+          Offerte aanvragen →
+        </a>
+
+        <a class="btn outline" href="#werken">
+          Werken bij ons →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     DIENSTEN
-===================================================== -->
+<!-- ABOUT -->
 
-<section
-class="services section"
-id="diensten">
+<section class="section about" id="over">
 
-<div class="container">
+<div class="wrap">
+
+  <div class="two">
+
+    <div>
+
+      <h2 class="title">
+        Over AS Traffic Control
+      </h2>
+
+      <p class="lead">
+        AS Traffic Control richt zich op veilige,
+        professionele en goed georganiseerde verkeersbegeleiding.
+      </p>
+
+      <p>
+        Wij ondersteunen bedrijven, gemeenten, aannemers en
+        organisatoren bij verschillende verkeerssituaties.
+        Duidelijke afspraken, betrouwbare communicatie,
+        professionele medewerkers en een goede planning
+        staan bij iedere opdracht centraal.
+      </p>
+
+    </div>
+
+    <div class="box checks">
+
+      <div>Professionele verkeersbegeleiding</div>
+
+      <div>Betrouwbare planning en communicatie</div>
+
+      <div>Wegwerkzaamheden en infrastructuur</div>
+
+      <div>Evenementen en parkeerbegeleiding</div>
+
+      <div>Flexibele inzet voor verschillende projecten</div>
+
+    </div>
+
+  </div>
 
 
-<div class="services-title">
+  <div class="country">
 
-<h2>
-Onze diensten
+    <div>
+
+      <h2 class="title">
+        Actief door heel Nederland
+      </h2>
+
+      <p class="lead">
+        Vanuit Heerlen ondersteunt AS Traffic Control
+        opdrachtgevers bij verkeersprojecten door heel Nederland.
+      </p>
+
+    </div>
+
+    <div class="map">
+      <div class="nl">🇳🇱</div>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section class="section videos" id="videos">
+
+<div class="wrap">
+
+  <h2 class="title">
+    Onze video's
+  </h2>
+
+  <p class="lead">
+    Bekijk onze video's en krijg een beter beeld van
+    AS Traffic Control en werken binnen ons bedrijf.
+  </p>
+
+  <div class="grid2">
+
+    <div class="video">
+
+      <div class="play">▶</div>
+
+      <div class="caption">
+        <h3>Over AS Traffic Control</h3>
+        <div>Wie wij zijn en wat wij doen</div>
+      </div>
+
+    </div>
+
+
+    <div class="video">
+
+      <div class="play">▶</div>
+
+      <div class="caption">
+        <h3>Werken bij AS Traffic Control</h3>
+        <div>Maak kennis met werken binnen ons team</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- WORK IMAGES -->
+
+<section class="section work" id="werk">
+
+<div class="wrap">
+
+  <h2 class="title">
+    Ons werk in de praktijk
+  </h2>
+
+  <p class="lead">
+    AS Traffic Control kan worden ingezet bij verschillende
+    werkzaamheden en verkeerssituaties.
+  </p>
+
+
+  <div class="cards">
+
+
+    <article class="card">
+
+      <img
+        src="16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg"
+        alt="Wegwerkzaamheden"
+      >
+
+      <div class="card-content">
+
+        <h3>Wegwerkzaamheden</h3>
+
+        <p>
+          Veilige verkeersbegeleiding bij werkzaamheden
+          langs en op de openbare weg.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="card">
+
+      <img
+        src="6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg"
+        alt="Asfalteringswerkzaamheden"
+      >
+
+      <div class="card-content">
+
+        <h3>Asfalteringswerkzaamheden</h3>
+
+        <p>
+          Verkeersbegeleiding rond afsluitingen,
+          werkvakken en asfalteringsprojecten.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="card">
+
+      <img
+        src="16D07C34-1E33-4EC3-B80C-1BA1980B0515.jpeg"
+        alt="Graafwerkzaamheden"
+      >
+
+      <div class="card-content">
+
+        <h3>Grondwerk & graafwerkzaamheden</h3>
+
+        <p>
+          Ondersteuning bij bouwplaatsen,
+          graafwerkzaamheden en infrastructurele projecten.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="card">
+
+      <img
+        src="9098305B-2116-4B08-8A35-5977165A84AB.jpeg"
+        alt="Verkeersregelaars"
+      >
+
+      <div class="card-content">
+
+        <h3>Verkeersregelaars</h3>
+
+        <p>
+          Professionele verkeersbegeleiding voor
+          een veilige en overzichtelijke doorstroming.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="card">
+
+      <img
+        src="6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg"
+        alt="Evenementen"
+      >
+
+      <div class="card-content">
+
+        <h3>Evenementen</h3>
+
+        <p>
+          Verkeers- en parkeerbegeleiding bij
+          evenementen en andere bijeenkomsten.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="card">
+
+      <img
+        src="9098305B-2116-4B08-8A35-5977165A84AB.jpeg"
+        alt="Avond en nachtwerk"
+      >
+
+      <div class="card-content">
+
+        <h3>Werk in de avond & nacht</h3>
+
+        <p>
+          Ook tijdens werkzaamheden in de avond
+          en nacht zorgen wij voor professionele verkeersbegeleiding.
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section services-info">
+
+<div class="wrap">
+
+<h2 class="title">
+  Wat doet AS Traffic Control?
 </h2>
 
-</div>
-
-
-<div class="service-grid">
-
-
-<article class="service-card">
-
-<div class="service-photo service-1">
-</div>
-
-<div class="service-icon">
-♟
-</div>
-
-<div class="service-content">
-
-<h3>
-Wegwerkzaamheden
-</h3>
-
-<p>
-Veilige en efficiënte begeleiding van
-wegwerkzaamheden met gecertificeerde
-verkeersregelaars.
+<p class="lead">
+  Wij ondersteunen opdrachtgevers bij tijdelijke
+  en projectgebonden verkeerssituaties waarbij veiligheid,
+  overzicht en een goede verkeersdoorstroming belangrijk zijn.
 </p>
 
-</div>
-
-</article>
-
-
-<article class="service-card">
-
-<div class="service-photo service-2">
-</div>
-
-<div class="service-icon">
-♧
-</div>
-
-<div class="service-content">
-
-<h3>
-Evenementen
-</h3>
-
-<p>
-Professioneel verkeersmanagement voor
-evenementen, festivals en publieke
-bijeenkomsten.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="service-card">
-
-<div class="service-photo service-3">
-</div>
-
-<div class="service-icon">
-↔
-</div>
-
-<div class="service-content">
-
-<h3>
-Omleidingen
-</h3>
-
-<p>
-Opzetten en begeleiden van omleidingen
-voor een vlotte doorstroming van verkeer.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="service-card">
-
-<div class="service-photo service-4">
-</div>
-
-<div class="service-icon">
-🚦
-</div>
-
-<div class="service-content">
-
-<h3>
-Verkeersregelaar op Locatie
-</h3>
-
-<p>
-Inzet van verkeersregelaars voor locaties
-waar verkeersveiligheid cruciaal is.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="service-card">
-
-<div class="service-photo service-5">
-</div>
-
-<div class="service-icon">
-P
-</div>
-
-<div class="service-content">
-
-<h3>
-Parkeerbeheer
-</h3>
-
-<p>
-Efficiënt parkeerbeheer voor een
-georganiseerde en veilige parkeerstroom.
-</p>
-
-</div>
-
-</article>
-
-
-</div>
-
-
-<!-- STATS -->
-
-<div class="usp-wrap">
-
-<div class="usp-grid">
-
-
-<div class="usp">
-
-<div class="usp-icon">
-◇
-</div>
-
-<div>
-
-<strong>
-100%
-</strong>
-
-<h4>
-Veiligheid voorop
-</h4>
-
-<p>
-Veiligheid staat bij ons altijd op nummer één.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="usp">
-
-<div class="usp-icon">
-◷
-</div>
-
-<div>
-
-<strong>
-24/7
-</strong>
-
-<h4>
-Flexibel inzetbaar
-</h4>
-
-<p>
-Wij zijn dag en nacht beschikbaar wanneer u ons nodig heeft.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="usp">
-
-<div class="usp-icon">
-♧
-</div>
-
-<div>
-
-<strong style="font-size:17px;">
-Heel Nederland
-</strong>
-
-<h4>
-Landelijke dekking
-</h4>
-
-<p>
-Inzetbaar in heel Nederland, snel ter plaatse.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="usp">
-
-<div class="usp-icon">
-♙
-</div>
-
-<div>
-
-<strong>
-AS
-</strong>
-
-<h4>
-Professioneel &amp; Betrouwbaar
-</h4>
-
-<p>
-Gecertificeerde verkeersregelaars met ervaring en toewijding.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
+<div class="service-list">
+
+  <div class="service-item">
+    <h3>Wegwerkzaamheden</h3>
+    <p>
+      Verkeersbegeleiding rondom onderhoud,
+      werkzaamheden en tijdelijke verkeerssituaties.
+    </p>
+  </div>
+
+  <div class="service-item">
+    <h3>Infrastructuur</h3>
+    <p>
+      Ondersteuning bij bouw-, grond-,
+      graaf- en infrastructurele projecten.
+    </p>
+  </div>
+
+  <div class="service-item">
+    <h3>Evenementen</h3>
+    <p>
+      Begeleiding van bezoekers,
+      voertuigen en parkeerbewegingen.
+    </p>
+  </div>
+
+  <div class="service-item">
+    <h3>Omleidingen</h3>
+    <p>
+      Ondersteuning bij tijdelijke afsluitingen
+      en gewijzigde verkeerssituaties.
+    </p>
+  </div>
+
+  <div class="service-item">
+    <h3>Parkeerbeheer</h3>
+    <p>
+      Georganiseerde begeleiding van
+      aankomend en vertrekkend verkeer.
+    </p>
+  </div>
+
+  <div class="service-item">
+    <h3>Avond- en nachtwerk</h3>
+    <p>
+      Verkeersbegeleiding bij projecten
+      die buiten reguliere werktijden plaatsvinden.
+    </p>
+  </div>
 
 </div>
 
@@ -1902,793 +887,548 @@ Gecertificeerde verkeersregelaars met ervaring en toewijding.
 </section>
 
 
-<!-- =====================================================
-     VIDEO BLOKKEN
-===================================================== -->
+<!-- FORMS -->
 
-<section class="videos">
+<section class="section forms">
 
-<div class="container video-grid">
+<div class="wrap formgrid">
 
 
-<div class="video-card">
+<!-- JOB FORM -->
 
-<div class="video-copy">
+<div class="formcard" id="werken">
 
-<h3>
-Over AS Traffic Control
-</h3>
-
-<div class="small">
-Wie wij zijn en wat wij doen
-</div>
-
-<p>
-Bekijk onze bedrijfspresentatie en ontdek
-hoe wij elke dag zorgen voor veiligheid op
-de weg. Professioneel, betrouwbaar en
-altijd in beweging.
-</p>
-
-</div>
-
-
-<div class="video-preview">
-
-<img
-src="6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg"
-alt="Over AS Traffic Control">
-
-<button
-class="play-btn"
-type="button"
-onclick="goToAbout()"
-aria-label="Meer over AS Traffic Control">
-
-▶
-
-</button>
-
-</div>
-
-</div>
-
-
-<div class="video-card">
-
-<div class="video-copy">
-
-<h3>
-Werken bij<br>
-AS Traffic Control
-</h3>
-
-<div class="small">
-Word onderdeel van ons team!
-</div>
-
-<p>
-Ontdek hoe het is om als verkeersregelaar
-bij AS Traffic Control te werken.
-Samen zorgen we voor veiligheid.
-</p>
-
-</div>
-
-
-<div class="video-preview">
-
-<img
-src="9098305B-2116-4B08-8A35-5977165A84AB.jpeg"
-alt="Werken bij AS Traffic Control">
-
-<button
-class="play-btn"
-type="button"
-onclick="goToJobs()"
-aria-label="Werken bij AS Traffic Control">
-
-▶
-
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     DIRECT OFFERTE CTA
-===================================================== -->
-
-<section class="cta-section">
-
-<div class="container">
-
-<div class="cta-box">
-
-
-<div class="cta-copy">
+<div class="formhead">
 
 <h2>
-Direct verkeersregelaars nodig?
-</h2>
-
-<p>
-Vraag vandaag nog een vrijblijvende offerte aan.
-</p>
-
-<div class="cta-benefits">
-
-<span>
-Snelle reactie
-</span>
-
-<span>
-Maatwerk
-</span>
-
-<span>
-Transparante prijzen
-</span>
-
-</div>
-
-</div>
-
-
-<a
-class="orange-btn"
-href="#offerte">
-
-Vraag direct een offerte aan
-<span>→</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     WAAROM AS
-===================================================== -->
-
-<section class="why section">
-
-<div class="container">
-
-
-<div class="why-title">
-
-<h2>
-Waarom kiezen voor AS Traffic Control?
-</h2>
-
-</div>
-
-
-<div class="why-grid">
-
-
-<div class="why-card">
-
-<div class="why-icon">
-♧
-</div>
-
-<h3>
-Ervaren &amp; gecertificeerd
-</h3>
-
-<p>
-Onze verkeersregelaars zijn
-gecertificeerd en professioneel inzetbaar.
-</p>
-
-</div>
-
-
-<div class="why-card">
-
-<div class="why-icon">
-◇
-</div>
-
-<h3>
-Betrouwbaar &amp; flexibel
-</h3>
-
-<p>
-Wij denken mee, schakelen snel
-en zijn flexibel inzetbaar.
-</p>
-
-</div>
-
-
-<div class="why-card">
-
-<div class="why-icon">
-♕
-</div>
-
-<h3>
-Kwaliteit &amp; veiligheid
-</h3>
-
-<p>
-Kwaliteit en veiligheid staan
-centraal in alles wat wij doen.
-</p>
-
-</div>
-
-
-<div class="why-card">
-
-<div class="why-icon">
-☏
-</div>
-
-<h3>
-Duidelijke communicatie
-</h3>
-
-<p>
-Heldere afspraken, korte lijnen
-en duidelijke communicatie.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     OVER ONS
-===================================================== -->
-
-<section
-class="about section"
-id="over-ons">
-
-<div class="container about-grid">
-
-
-<div>
-
-<div class="orange-label">
-OVER ONS
-</div>
-
-<h2>
-AS Traffic Control
+Werken bij AS Traffic Control
 </h2>
 
 <p>
-AS Traffic Control staat voor professionele,
-betrouwbare en goed georganiseerde
-verkeersbegeleiding.
+Ervaren verkeersregelaar of klaar voor een nieuwe stap?
 </p>
 
 <p>
-Met duidelijke communicatie, goede planning
-en professionele verkeersregelaars zorgen wij
-voor een veilige en efficiënte verkeersdoorstroming.
+Ook als je nog geen verkeersregelaar bent,
+kun je bij AS Traffic Control informeren naar
+de mogelijkheden voor opleiding en begeleiding.
 </p>
 
-
-<ul class="check-list">
-
-<li>
-Professioneel en betrouwbaar
-</li>
-
-<li>
-Gecertificeerde verkeersregelaars
-</li>
-
-<li>
-Duidelijke communicatie en planning
-</li>
-
-<li>
-Flexibel inzetbaar
-</li>
-
-<li>
-Werkzaam door heel Nederland
-</li>
-
-</ul>
-
-
-<a
-href="#contact"
-class="orange-btn">
-
-Neem contact op
-<span>→</span>
-
-</a>
-
 </div>
 
 
-<div class="about-image">
-
-<img
-src="6699B69C-7C19-4A0B-BBEF-4393F32A905E.jpeg"
-alt="AS Traffic Control">
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     VACATURES
-===================================================== -->
-
-<section
-class="jobs section"
-id="vacatures">
-
-<div class="container">
-
-
-<div class="title">
-
-<div class="title-label">
-WERKEN BIJ AS TRAFFIC CONTROL
-</div>
-
-<h2>
-Samen zorgen we voor veiligheid op de weg
-</h2>
-
-</div>
-
-
-<div class="job-grid">
-
-
-<div class="job-card">
-
-<div class="job-circle">
-🚦
-</div>
-
-<h3>
-Verkeersregelaar
-</h3>
-
-<p>
-Voor wegwerkzaamheden, evenementen en
-verschillende verkeerssituaties.
-</p>
-
-<ul>
-
-<li>
-Professionele werkhouding
-</li>
-
-<li>
-Flexibel inzetbaar
-</li>
-
-<li>
-Goede communicatie
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="job-card">
-
-<div class="job-circle">
-🎓
-</div>
-
-<h3>
-Opleiding tot verkeersregelaar
-</h3>
-
-<p>
-Heb je nog geen geldige verkeersregelaarsaanstelling?
-Laat jouw interesse achter.
-</p>
-
-<ul>
-
-<li>
-Motivatie en betrouwbaarheid
-</li>
-
-<li>
-Bereidheid om te leren
-</li>
-
-<li>
-Interesse in verkeersveiligheid
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="job-card">
-
-<div class="job-circle">
-🤝
-</div>
-
-<h3>
-Open sollicitatie
-</h3>
-
-<p>
-Wil je graag bij AS Traffic Control werken?
-Vertel ons wie je bent.
-</p>
-
-<ul>
-
-<li>
-Heel Nederland
-</li>
-
-<li>
-Verschillende projecten
-</li>
-
-<li>
-Professionele werkomgeving
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-
-<!-- SOLLICITATIE FORMULIER -->
-
-<div class="form-layout">
-
-
-<div class="form-info">
-
-<div class="orange-label">
-SOLLICITEREN
-</div>
-
-<h3>
-Interesse om bij ons te werken?
-</h3>
-
-<p>
-Vul jouw gegevens in.
-Wij nemen jouw sollicitatie zorgvuldig in behandeling.
-</p>
-
-<br>
-
-<p>
-Je kunt jouw CV ook rechtstreeks sturen naar:
-</p>
-
-<br>
-
-<strong>
-sollicitatie@astrafficcontrol.nl
-</strong>
-
-</div>
-
-
-<div class="form-box">
-
+<form
+class="formbody"
+action="https://formspree.io/f/xgawgqzv"
+method="POST"
+>
 
 <input
-id="jobName"
-class="field"
-type="text"
-placeholder="Voor- en achternaam">
+type="hidden"
+name="_subject"
+value="Nieuwe sollicitatie via AS Traffic Control"
+>
 
 
-<input
-id="jobEmail"
-class="field"
-type="email"
-placeholder="E-mailadres">
+<div class="row">
+
+<div class="field">
+<label>Naam *</label>
+<input name="naam" required>
+</div>
+
+<div class="field">
+<label>E-mailadres *</label>
+<input type="email" name="email" required>
+</div>
+
+</div>
 
 
-<input
-id="jobPhone"
-class="field"
-type="tel"
-placeholder="Telefoonnummer">
+<div class="row">
+
+<div class="field">
+<label>Telefoonnummer *</label>
+<input type="tel" name="telefoon" required>
+</div>
+
+<div class="field">
+<label>Woonplaats *</label>
+<input name="woonplaats" required>
+</div>
+
+</div>
 
 
-<input
-id="jobCity"
-class="field"
-type="text"
-placeholder="Woonplaats">
+<div class="field">
 
+<label>
+Heb je ervaring als verkeersregelaar? *
+</label>
 
-<select
-id="jobCertificate"
-class="select-field">
+<select name="ervaring" required>
 
 <option value="">
-Heb je een geldige verkeersregelaarsaanstelling?
+Selecteer
 </option>
 
-<option value="Ja">
+<option>
 Ja
 </option>
 
-<option value="Nee">
+<option>
 Nee
-</option>
-
-<option value="Ik wil graag worden opgeleid">
-Ik wil graag worden opgeleid
 </option>
 
 </select>
 
+</div>
 
-<select
-id="jobExperience"
-class="select-field">
 
-<option value="">
-Hoeveel ervaring heb je?
+<div class="field">
+
+<label>
+Aantal jaren ervaring
+</label>
+
+<select name="jaren_ervaring">
+
+<option>
+Geen ervaring
 </option>
 
-<option value="Nog geen ervaring">
-Nog geen ervaring
+<option>
+Minder dan 1 jaar
 </option>
 
-<option value="0-2 jaar">
-0–2 jaar
+<option>
+1 - 2 jaar
 </option>
 
-<option value="2-5 jaar">
-2–5 jaar
+<option>
+2 - 5 jaar
 </option>
 
-<option value="Meer dan 5 jaar">
+<option>
 Meer dan 5 jaar
 </option>
 
 </select>
 
+</div>
+
+
+<div class="field">
+
+<label>
+Heb je een geldige aanstellingspas of certificaat?
+</label>
+
+<select name="certificaat">
+
+<option value="">
+Selecteer
+</option>
+
+<option>
+Ja
+</option>
+
+<option>
+Nee
+</option>
+
+<option>
+In aanvraag
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Geldig tot
+</label>
 
 <input
-id="jobAvailability"
-class="field"
-type="text"
-placeholder="Wanneer ben je beschikbaar?">
+type="date"
+name="geldig_tot"
+>
+
+</div>
 
 
-<textarea
-id="jobMessage"
-class="text-field"
-placeholder="Vertel kort iets over jezelf en je ervaring"></textarea>
+<div class="field">
+
+<label>
+Opleidingsmogelijkheden
+</label>
+
+<select name="opleiding">
+
+<option>
+Ik heb al de benodigde kwalificaties
+</option>
+
+<option>
+Ik heb nog geen certificaat en ben geïnteresseerd in opleidingsmogelijkheden
+</option>
+
+</select>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
+
+<label>
+Rijbewijs
+</label>
+
+<select name="rijbewijs">
+
+<option>
+Ja
+</option>
+
+<option>
+Nee
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Eigen vervoer
+</label>
+
+<select name="eigen_vervoer">
+
+<option>
+Ja
+</option>
+
+<option>
+Nee
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Beschikbaarheid / extra informatie
+</label>
+
+<textarea name="informatie"></textarea>
+
+</div>
 
 
 <button
-type="button"
-class="send-button"
-onclick="sendApplication()">
+class="btn primary submit"
+type="submit"
+>
 
-Sollicitatie versturen →
+Verstuur sollicitatie →
 
 </button>
 
+</form>
 
 </div>
 
-</div>
 
+<!-- QUOTE FORM -->
 
-</div>
+<div class="formcard" id="offerte">
 
-</section>
-
-
-<!-- =====================================================
-     CONTACT & OFFERTE
-===================================================== -->
-
-<section
-class="contact section"
-id="contact">
-
-<div class="container contact-grid">
-
-
-<div>
-
-<div class="orange-label">
-CONTACT
-</div>
+<div class="formhead">
 
 <h2>
-Neem contact met ons op
+Offerte aanvragen
 </h2>
 
-<p class="contact-intro">
-Heeft u professionele verkeersregelaars nodig?
-Neem vrijblijvend contact op met AS Traffic Control.
+<p>
+Geef aan waar, wanneer en hoeveel
+verkeersregelaars u nodig heeft.
 </p>
 
-
-<div class="contact-item">
-
-<strong>
-TELEFOON
-</strong>
-
-<a href="tel:+31618259501">
-+31 6 18259501
-</a>
-
 </div>
 
 
-<div class="contact-item">
-
-<strong>
-E-MAIL
-</strong>
-
-<a href="mailto:info@astrafficcontrol.nl">
-info@astrafficcontrol.nl
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<strong>
-WERKGEBIED
-</strong>
-
-<span>
-Heel Nederland
-</span>
-
-</div>
-
-</div>
-
-
-<div
-class="quote-box"
-id="offerte">
-
-<h3>
-Offerte aanvragen
-</h3>
-
+<form
+class="formbody"
+action="https://formspree.io/f/xoeagbpq"
+method="POST"
+>
 
 <input
-id="quoteName"
-class="field"
-type="text"
-placeholder="Uw naam">
+type="hidden"
+name="_subject"
+value="Nieuwe offerteaanvraag via AS Traffic Control"
+>
 
+
+<div class="row">
+
+<div class="field">
+
+<label>
+Bedrijfsnaam *
+</label>
 
 <input
-id="quoteEmail"
-class="field"
+name="bedrijfsnaam"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Contactpersoon *
+</label>
+
+<input
+name="contactpersoon"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
+
+<label>
+E-mailadres *
+</label>
+
+<input
 type="email"
-placeholder="E-mailadres">
+name="email"
+required
+>
 
+</div>
+
+
+<div class="field">
+
+<label>
+Telefoonnummer *
+</label>
 
 <input
-id="quotePhone"
-class="field"
 type="tel"
-placeholder="Telefoonnummer">
+name="telefoon"
+required
+>
 
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Type project *
+</label>
+
+<select
+name="project"
+required
+>
+
+<option value="">
+Selecteer
+</option>
+
+<option>
+Wegwerkzaamheden
+</option>
+
+<option>
+Asfalteringswerkzaamheden
+</option>
+
+<option>
+Graafwerkzaamheden
+</option>
+
+<option>
+Evenement
+</option>
+
+<option>
+Omleiding
+</option>
+
+<option>
+Parkeerbeheer
+</option>
+
+<option>
+Andere verkeerssituatie
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Projectlocatie / plaats *
+</label>
+
+<input
+name="locatie"
+required
+>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
+
+<label>
+Datum *
+</label>
+
+<input
+type="date"
+name="datum"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Aantal verkeersregelaars *
+</label>
+
+<input
+type="number"
+min="1"
+name="aantal_verkeersregelaars"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
+
+<label>
+Begintijd *
+</label>
+
+<input
+type="time"
+name="begintijd"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Eindtijd *
+</label>
+
+<input
+type="time"
+name="eindtijd"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Opmerkingen / bijzonderheden
+</label>
 
 <textarea
-id="quoteMessage"
-class="text-field"
-placeholder="Vertel kort waarvoor u verkeersregelaars nodig heeft"></textarea>
+name="bijzonderheden"
+></textarea>
+
+</div>
 
 
 <button
-type="button"
-class="send-button"
-onclick="sendQuote()">
+class="btn primary submit"
+type="submit"
+>
 
-Offerte aanvragen →
+Verstuur offerteaanvraag →
 
 </button>
 
+</form>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
-<div class="container footer-grid">
+<div class="wrap">
 
+<div class="footer-grid">
 
 <div>
 
 <img
-class="footer-logo"
 src="E5D99CF9-7C61-4C0C-A088-21D989622C33.jpeg"
-alt="AS Traffic Control">
+alt="AS Traffic Control"
+>
 
 <p>
-Veiligheid op de weg,
-altijd in beweging.
-</p>
-
-</div>
-
-
-<div>
-
-<h4>
-Contact
-</h4>
-
-<p>
-<a href="tel:+31618259501">
-+31 6 18259501
-</a>
-</p>
-
-<p>
-<a href="mailto:info@astrafficcontrol.nl">
-info@astrafficcontrol.nl
-</a>
+Veiligheid op de weg, altijd in beweging.
 </p>
 
 </div>
@@ -2701,341 +1441,59 @@ Bedrijfsgegevens
 </h4>
 
 <p>
+AS Traffic Control
+<br>
 KVK: 42141533
+<br>
+BTW-ID: NL005529592B80
 </p>
+
+</div>
+
+
+<div>
+
+<h4>
+Contact
+</h4>
 
 <p>
-BTW-id: NL005529592B80
+
+<a href="mailto:info@astrafficcontrol.nl">
+info@astrafficcontrol.nl
+</a>
+
+<br>
+
+<a href="tel:+31618259501">
++31 6 18259501
+</a>
+
+<br><br>
+
+Aambosveld 110
+<br>
+6416 CX Heerlen
+<br>
+Nederland
+
 </p>
 
 </div>
 
-
 </div>
 
 
-<div class="container footer-bottom">
+<div class="copy">
 
-© 2026
-<strong>
-AS Traffic Control
-</strong>
+© 2026 AS Traffic Control.
+Alle rechten voorbehouden.
 
-&nbsp; • &nbsp;
-
-Veiligheid op de weg, altijd in beweging.
+</div>
 
 </div>
 
 </footer>
-
-
-<script>
-
-/* =========================================================
-   HULPFUNCTIES
-========================================================= */
-
-function clean(value){
-    return value ? value.trim() : "";
-}
-
-
-function toggleMenu(){
-
-    document
-    .getElementById("mobileMenu")
-    .classList
-    .toggle("open");
-
-}
-
-
-function closeMenu(){
-
-    document
-    .getElementById("mobileMenu")
-    .classList
-    .remove("open");
-
-}
-
-
-/* Video-knoppen werken als navigatie
-   zolang er nog geen definitieve videobestanden
-   in de website-map staan. */
-
-function goToAbout(){
-
-    document
-    .getElementById("over-ons")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-function goToJobs(){
-
-    document
-    .getElementById("vacatures")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =========================================================
-   SOLLICITATIE
-========================================================= */
-
-function sendApplication(){
-
-    const name =
-        clean(
-            document.getElementById("jobName").value
-        );
-
-    const email =
-        clean(
-            document.getElementById("jobEmail").value
-        );
-
-    const phone =
-        clean(
-            document.getElementById("jobPhone").value
-        );
-
-    const city =
-        clean(
-            document.getElementById("jobCity").value
-        );
-
-    const certificate =
-        document.getElementById("jobCertificate").value;
-
-    const experience =
-        document.getElementById("jobExperience").value;
-
-    const availability =
-        clean(
-            document.getElementById("jobAvailability").value
-        );
-
-    const message =
-        clean(
-            document.getElementById("jobMessage").value
-        );
-
-
-    if(!name || !email || !phone){
-
-        alert(
-            "Vul minimaal uw naam, e-mailadres en telefoonnummer in."
-        );
-
-        return;
-
-    }
-
-
-    fetch(
-        "https://formspree.io/f/xgawgqzv",
-        {
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json",
-                "Accept":"application/json"
-            },
-
-            body:JSON.stringify({
-
-                name:name,
-                email:email,
-                phone:phone,
-                city:city,
-                certificate:certificate,
-                experience:experience,
-                availability:availability,
-                message:message
-
-            })
-
-        }
-    )
-
-    .then(response=>{
-
-        if(response.ok){
-
-            alert(
-                "Bedankt! Uw sollicitatie is succesvol verzonden."
-            );
-
-            document
-            .getElementById("jobName")
-            .value="";
-
-            document
-            .getElementById("jobEmail")
-            .value="";
-
-            document
-            .getElementById("jobPhone")
-            .value="";
-
-            document
-            .getElementById("jobCity")
-            .value="";
-
-            document
-            .getElementById("jobCertificate")
-            .value="";
-
-            document
-            .getElementById("jobExperience")
-            .value="";
-
-            document
-            .getElementById("jobAvailability")
-            .value="";
-
-            document
-            .getElementById("jobMessage")
-            .value="";
-
-        }else{
-
-            alert(
-                "Er is iets misgegaan. Probeer het opnieuw."
-            );
-
-        }
-
-    })
-
-    .catch(()=>{
-
-        alert(
-            "Er is iets misgegaan. Probeer het opnieuw."
-        );
-
-    });
-
-}
-
-
-/* =========================================================
-   OFFERTE
-========================================================= */
-
-function sendQuote(){
-
-    const name =
-        clean(
-            document.getElementById("quoteName").value
-        );
-
-    const email =
-        clean(
-            document.getElementById("quoteEmail").value
-        );
-
-    const phone =
-        clean(
-            document.getElementById("quotePhone").value
-        );
-
-    const message =
-        clean(
-            document.getElementById("quoteMessage").value
-        );
-
-
-    if(!name || !email){
-
-        alert(
-            "Vul minimaal uw naam en e-mailadres in."
-        );
-
-        return;
-
-    }
-
-
-    fetch(
-        "https://formspree.io/f/xoeagbpq",
-        {
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json",
-                "Accept":"application/json"
-            },
-
-            body:JSON.stringify({
-
-                name:name,
-                email:email,
-                phone:phone,
-                message:message
-
-            })
-
-        }
-    )
-
-    .then(response=>{
-
-        if(response.ok){
-
-            alert(
-                "Bedankt! Uw offerteaanvraag is succesvol verzonden."
-            );
-
-            document
-            .getElementById("quoteName")
-            .value="";
-
-            document
-            .getElementById("quoteEmail")
-            .value="";
-
-            document
-            .getElementById("quotePhone")
-            .value="";
-
-            document
-            .getElementById("quoteMessage")
-            .value="";
-
-        }else{
-
-            alert(
-                "Er is iets misgegaan. Probeer het opnieuw."
-            );
-
-        }
-
-    })
-
-    .catch(()=>{
-
-        alert(
-            "Er is iets misgegaan. Probeer het opnieuw."
-        );
-
-    });
-
-}
-
-</script>
-
 
 </body>
 </html>
