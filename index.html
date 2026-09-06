@@ -2040,6 +2040,55 @@
     );
 
 </script>
+<script>
+  const sollicitatieForm = document.querySelector(
+    'form[action="https://formspree.io/f/xgawgqzv"]'
+  );
 
+  if (sollicitatieForm) {
+    sollicitatieForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const submitButton = sollicitatieForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.innerHTML : "";
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Even geduld...";
+      }
+
+      try {
+        const response = await fetch(sollicitatieForm.action, {
+          method: "POST",
+          body: new FormData(sollicitatieForm),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          sollicitatieForm.innerHTML = `
+            <div class="notice">
+              <strong>Bedankt voor je sollicitatie!</strong><br><br>
+              Je sollicitatie is succesvol verzonden.<br><br>
+              Stuur je CV en, indien beschikbaar, je certificaat/pas naar
+              <strong>sollicitatie@astrafficcontrol.nl</strong>.<br><br>
+              Wij nemen zo snel mogelijk contact met je op.
+            </div>
+          `;
+        } else {
+          throw new Error("Formulier kon niet worden verzonden.");
+        }
+      } catch (error) {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonText;
+        }
+
+        alert("Er is iets misgegaan. Probeer het opnieuw.");
+      }
+    });
+  }
+</script>
 </body>
 </html>
